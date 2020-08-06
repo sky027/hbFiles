@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{overflow: hidden;}
+			.h200{height: 200px;}
+			.col1{border: 1px solid gold;}
+			.col2{border: 1px solid green;}
+			.col3{border: 1px solid blue;}
+			.col4{border: 1px solid chartreuse;}
+			.col5{border: 1px solid salmon;}
+			.col6{border: 1px solid brown;}
+		</style>
+	</head>
+	<body>
+		<div style="width: 700px;height: 580px;border: 1px solid #275DA1;overflow-y: auto;">
+			<div style="width: 650px;margin: 10px auto;border: dashed 1px red;">
+				<br /><br />
+				<div class="wb col1 h200">1</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col2 h200">2</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">3</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col3 h200">4</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">5</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col4 h200">6</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col3 h200">7</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col5 h200">8</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">9</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col6 h200">10</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">11</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col3 h200">12</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col6 h200">13</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col2 h200">14</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">15</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col6 h200">16</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">17</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col5 h200">18</div><br /><br /><br /><br /><br /><br />
+				<div class="wb col1 h200">19</div><br /><br /><br /><br /><br /><br />
+			</div>
+		</div>
+		<script type="text/javascript">
+			windowAddMouseWheel();
+            function windowAddMouseWheel() {
+                var scrollFunc = function (e) {
+                    e = e || window.event;
+                    if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+                        if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                            console.log("IE，谷歌向 上 滚动");
+                        }
+                        if (e.wheelDelta < 0) { //当滑轮向下滚动时
+                            console.log("IE，谷歌向 下 滚动");
+                        }
+                    } else if (e.detail) {  //Firefox滑轮事件
+                        if (e.detail> 0) { //当滑轮向上滚动时
+                            console.log("Firefox向 上");
+                        }
+                        if (e.detail< 0) { //当滑轮向下滚动时
+                            console.log("Firefox向 下");
+                        }
+                    }
+                };
+                //给页面绑定滑轮滚动事件
+                if (document.addEventListener) {
+                    document.addEventListener('DOMMouseScroll', scrollFunc, false);
+                }
+                //滚动滑轮触发scrollFunc方法
+                window.onmousewheel = document.onmousewheel = scrollFunc;
+            }
+		</script>
+	</body>
+</html>

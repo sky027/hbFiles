@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			button{margin-right: 20px;}
+			.progressRate{
+				width: 300px;
+				height: 12px;
+				background: #f0f0f0;
+				position: relative;
+				border-radius: 7px;
+				border: 1px solid #C8CCCF;
+			}
+			.rate{
+				position: relative;
+				top: 0;left: 0;
+				height: 100%;
+				background: #0078d7;
+				border-radius: 7px;
+				width: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="start">开始</button><button id="reset">重置</button>
+		<p>
+			<div class="progressRate">
+				<div class="rate"></div>
+			</div>
+			<h3 class="h3tx"><span class="tiptx"></span> <span class="scnum"></span></h3>
+		</p>
+		<script type="text/javascript">
+			$(".h3tx").hide();
+			$("#start").click(function() {
+				$(".h3tx").show();
+				$(".tiptx").text("下载中...");
+				var w = $(".progressRate").width();
+				var n = 0;
+				var sum = 0;
+				var timer = setInterval(function() {
+					n++;
+					sum += (w / 100);
+					if(sum > w && n > 100){
+						$(".tiptx").text("已完成 ");
+						clearInterval(timer);
+					} else {
+						$(".rate").width(sum);
+						$(".scnum").text(n + '%');
+					}
+				}, 50);
+			});
+			$("#reset").click(function() {
+				$(".h3tx").hide();
+				$(".rate").width(0);
+			});
+		</script>
+	</body>
+</html>

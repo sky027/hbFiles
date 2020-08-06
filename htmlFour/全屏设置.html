@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input.inpnu[type=number] {
+			  -moz-appearance:textfield;
+			}
+			input.inpnu[type=number]::-webkit-inner-spin-button,
+			input.inpnu[type=number]::-webkit-outer-spin-button {
+			  -webkit-appearance: none;
+			  margin: 0;
+			}
+			.inpnu{height: 30px;line-height: 30px;font-size: 20px;}
+		</style>
+	</head>
+	<body>
+		<p>
+			<!--if(value.length>5)value=value.slice(0,5) oninput="checkNum(event)"  -->
+			<input type="number" class="inpnu" oninput="if(value.length>5)value=value.slice(0,5)" />
+		</p>
+		<h2><button onclick="showFull()">进入全屏</button></h2>
+		<h2><button onclick="exitFull()">退出全屏</button></h2>
+		<h2><button onclick="checkData()">比较</button></h2>
+		<h2><button onclick="loadList()">递归组合</button></h2>
+		<script type="text/javascript">
+			function checkNum(event) {
+				const reg = new RegExp(/^[0-9]*[1-9][0-9]*$/);
+				const val = event.target.value;
+				if (reg.test(val)) {
+			      if (val.length > 5) {
+			        event.target.value = val.slice(0, 5);
+			      }
+			    } else {
+			      event.target.value = '';
+			    }
+			}
+			function showFull() {
+				var docElm = document.documentElement;
+ 
+				//W3C 
+				 
+				if (docElm.requestFullscreen) { 
+				 
+				  docElm.requestFullscreen(); 
+				 
+				}
+				 
+				//FireFox 
+				 
+				else if (docElm.mozRequestFullScreen) { 
+				 
+				  docElm.mozRequestFullScreen(); 
+				 
+				}
+				 
+				//Chrome等 
+				 
+				else if (docElm.webkitRequestFullScreen) { 
+				 
+				  docElm.webkitRequestFullScreen(); 
+				 
+				}
+				 
+				//IE11
+				 
+				else if (docElm.msRequestFullscreen) {
+				 
+				 docElm.msRequestFullscreen();
+				 
+				}
+			}
+			function exitFull() {
+				if (document.exitFullscreen) { 
+					document.exitFullscreen(); 
+				} else if (document.mozCancelFullScreen) { 
+					document.mozCancelFullScreen(); 
+				} else if (document.webkitCancelFullScreen) { 
+					document.webkitCancelFullScreen(); 
+				} else if (document.msExitFullscreen) { 
+					document.msExitFullscreen(); 
+				}
+			}
+			function checkData() {
+				var arr = [
+					{a: '2', b: '3'},
+					{a: '4', b: '5'},
+					{a: '6', b: '7'},
+				];
+				var s = arr.find(v => {
+					return v.a == '8';
+				});
+			}
+			function loadList() {
+				var arr = [
+					{id: '1', name: '1', pid: '0'},
+					{id: '2', name: '2', pid: '0'},
+					{id: '3', name: '3', pid: '0'},
+					{id: '11', name: '11', pid: '1'},
+					{id: '12', name: '12', pid: '1'},
+					{id: '111', name: '111', pid: '11'},
+					{id: '112', name: '112', pid: '11'},
+					{id: '21', name: '21', pid: '2'},
+					{id: '22', name: '22', pid: '2'},
+					{id: '221', name: '22', pid: '22'},
+					{id: '31', name: '31', pid: '3'}
+				];
+				var arrList = info(arr);
+				var s = 0;
+			}
+			
+			function info(arr) {
+				var arrList =[];
+				//初始化数据
+				arrList = dataInfo('0', arr);
+				for (var i = 0 ; i < arrList.length; i++) {
+					foreachInfo(arrList[i], arr);		
+				}
+				return arrList;
+			}
+			
+			function foreachInfo(arrInfo, arr) {
+				var childList = [];
+				arr.forEach(itemOne => {
+					if (itemOne.pid == arrInfo.id) {
+						childList.push(itemOne);
+					}
+				});
+				if (0 >= childList.length) {
+					return;
+				}
+				arrInfo.children = childList;
+				for (var i = 0; i < childList.length; i++) {
+					foreachInfo(childList[i], arr);	
+				}
+			}
+			
+			function dataInfo(pid, arr) {
+				var resultList = [];
+				arr.forEach(item => {
+					if (item.pid == '0') {
+						resultList.push(item);
+					}
+				});
+				return resultList;
+			}
+			
+		</script>
+	</body>
+</html>

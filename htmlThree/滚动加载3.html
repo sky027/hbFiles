@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#warp{padding: 15px;height: 520px;overflow-y: auto;overflow-x: hidden;}
+			.item{list-style-type: none;height: 30px;line-height: 30px;display: inline-block;overflow: hidden;word-spacing: normal;white-space: nowrap;text-overflow: ellipsis;}
+			.pwarp{width: 400px;height: 550px;border: 1px solid gray;overflow: hidden;}
+		</style>
+	</head>
+	<body>
+		<div class="pwarp">
+			<div id="warp"></div>
+		</div>
+		<p>
+			<button id="btn">下一页</button>
+		</p>
+		<script type="text/javascript">
+			var index = 1;
+			var size = 50;
+			var allList = [];
+			var list = [];
+			getdata();
+			sliceData();
+			function getdata(){
+				for (var i = 0; i < 500; i++) {
+					allList.push( (i+1) + '-XXX-' + fncUuid());
+				}
+			}
+			function sliceData(){
+				list = [];
+				if(index > Math.ceil(allList.length / size)){
+					return;
+				}
+				list = allList.slice((index-1) * size, index * size);
+				var html = [];
+				for (var i = 0; i < list.length; i++) {
+					html.push('<li class="item">'+ list[i] +'</li>');
+				}
+				$("#warp").append(html);
+				console.log(list);
+			}
+			function fncUuid() {
+				var len = 36;
+				var uuid = [];
+				var str = '0123456789abcdef';
+				for (var i = 0; i < len; i++) {
+					uuid[i] = str.substr(Math.floor(Math.random() * 0x10), 1);
+				}
+				if (len === 36) {
+					uuid[14] = '4';
+					uuid[19] = str.substr((uuid[19] & 0x3 | 0x8), 1);
+					uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+				}
+				return uuid.join('').replace(/-/g, '');
+			}
+			$("#btn").click(function(){
+				index++;
+				sliceData();
+			});
+			$("#warp").scroll(function(e){
+				setTimeout(function() {
+					var event = e;
+					var domHeight = $(event.target)[0].clientHeight;
+					var topHeight = event.target.scrollTop;
+					var scrollHeight = event.target.scrollHeight;
+					if(scrollHeight>domHeight && topHeight+domHeight == scrollHeight){
+						index++;
+						sliceData();
+					}
+				}, 1500);
+			});
+		</script>
+	</body>
+</html>

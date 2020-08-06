@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <style>
+            h1 {
+                line-height: 60px;
+                height: 60px;
+                background: #146402;
+                text-align: center;
+                font-weight: bold;
+                color: #eee;
+                font-size: 14px;
+            }
+            .chart {
+                height: 400px;
+                width: 500px;
+                margin: 30px auto;
+            }
+        </style>
+
+        <div id="main" class="chart"></div>
+        <script>
+
+	        var chart = echarts.init(document.getElementById('main'));
+	
+	        chart.setOption({
+	            aria: {
+	                show: true
+	            },
+	            title : {
+	                text: '某站点用户访问来源',
+	                subtext: '纯属虚构',
+	                x:'center'
+	            },
+	            tooltip : {
+	                trigger: 'item',
+	                formatter: "{a} <br/>{b} : {c} ({d}%)"
+	            },
+	            legend: {
+	                orient: 'vertical',
+	                left: 'left',
+	                data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+	            },
+	            series : [
+	                {
+	                    name: '访问来源',
+	                    type: 'pie',
+	                    radius : '55%',
+	                    center: ['50%', '60%'],
+	                    data:[
+	                        {value:335, name:'直接访问'},
+	                        {value:310, name:'邮件营销'},
+	                        {value:234, name:'联盟广告'},
+	                        {value:135, name:'视频广告'},
+	                        {value:1548, name:'搜索引擎'}
+	                    ],
+	                    itemStyle: {
+	                        emphasis: {
+	                            shadowBlur: 10,
+	                            shadowOffsetX: 0,
+	                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                        }
+	                    },
+	                    label: {
+	                    	normal: {
+	                    		formatter(v) {
+        							let text = v.name;
+        							if(text.length > 8){
+        								return text = `${text.slice(0, 8)}\n${text.slice(8, 16)}\n${text.slice(16, text.length)}`
+        							}
+        							
+        						}
+	                    	}
+	                    }
+	                }
+	            ]
+	        });
+	
+	        window.onresize = chart.resize;
+	        chart.on('legendselectchanged', function(obj) {
+	        	debugger;
+		        var selected = obj.selected;
+		        var legend = obj.name;
+		
+		        // 使用 legendToggleSelect Action 会重新触发 legendselectchanged Event，导致本函数重复运行
+		        // 使得 无 selected 对象
+		        if (selected != undefined) {
+		
+		            if (isFirstUnSelect(selected)) {
+		                triggerAction('legendToggleSelect', selected);
+		            } else if (isAllUnSelected(selected)) {
+		                triggerAction('legendSelect', selected);
+		
+		            }
+		        }
+		
+		    });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>demo案例</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+
+	<body>
+		<button class="btnp" data-value="html/test1.html">一一一</button>
+		<button class="btnp" data-value="html/test2.html">二二二</button>
+		<script type="text/javascript">
+			$(".btnp").click(function(){
+				var url = $(this).attr("data-value");
+				$.ajax({
+					type:"get",
+					url: url,
+					async:true,
+					success: function(res){
+						console.log(res);
+					},
+					error: function(res){
+						console.log("失败");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

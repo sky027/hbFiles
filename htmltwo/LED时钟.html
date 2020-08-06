@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>LED</title>
+		<style type="text/css">
+			body{margin: 0;padding: 0;background: #000000;}
+			.left{float: left;}
+			.clock{width: 985px;margin: 0 auto;height: 190px;margin-top: 50px;}
+			.clock::after{content: "";clear: both;}
+			.numbers{width: 120px;height: 190px;position: relative;}
+			.numbers span{display: block;border-radius: 5px;background: #CC0000;opacity: 0.25; position: absolute;}
+			.numbers .num1{width: 80px;height: 10px;top: 5px;left: 20px;}
+			.numbers .num2{width: 10px;height: 75px;top: 15px;left: 101px;}
+			.numbers .num3{width: 80px;height: 10px;top: 91px;left: 20px;}
+			.numbers .num4{width: 10px;height: 75px;top: 100px;left: 101px;}
+			.numbers .num5{width: 80px;height: 10px;top:173px;left: 20px;}
+			.numbers .num6{width: 10px;height: 75px;top: 100px;left: 9px;}
+			.numbers .num7{width: 10px;height: 75px;top: 15px;left: 9px;}
+			.points{height: 190px;width: 30px;position: relative;}
+			.pois{width: 20px;height: 20px;border-radius: 50%;background: #CC0000;position: absolute;}
+			.po1{top: 55px;left: 3px;}
+			.po2{top: 115px;left: 3px;}
+			.numbers span.on{opacity: 1;}
+			.now{color: navajowhite;width: 160px;text-align: center;margin-left: 30px;margin-top: 47px;}
+		</style>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="clock">
+			<div class="hour left">
+				<div class="numbers houra left">
+					<span class="num1"></span>
+					<span class="num2"></span>
+					<span class="num3"></span>
+					<span class="num4"></span>
+					<span class="num5"></span>
+					<span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+				<div class="numbers hourb left">
+					<span class="num1"></span>
+					<span class="num2"></span>
+					<span class="num3"></span>
+					<span class="num4"></span>
+					<span class="num5"></span>
+					<span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+			</div>
+			<div class="points left">
+				<div class="pois po1"></div>
+				<div class="pois po2"></div>
+			</div>
+			<div class="minute left">
+				<div class="numbers minutea left">
+					<span class="num1"></span>
+					<span class="num2"></span>
+					<span class="num3"></span>
+					<span class="num4"></span>
+					<span class="num5"></span>
+					<span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+				<div class="numbers minuteb left">
+					<span class="num1"></span>
+					<span class="num2"></span>
+					<span class="num3"></span>
+					<span class="num4"></span>
+					<span class="num5"></span>
+					<span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+			</div>
+			<div class="points left">
+				<div class="pois po1"></div>
+				<div class="pois po2"></div>
+			</div>
+			<div class="second left">
+				<div class="numbers seconda left">
+					<span class="num1"></span><span class="num2"></span>
+					<span class="num3"></span><span class="num4"></span>
+					<span class="num5"></span><span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+				<div class="numbers secondb left">
+					<span class="num1"></span><span class="num2"></span>
+					<span class="num3"></span><span class="num4"></span>
+					<span class="num5"></span><span class="num6"></span>
+					<span class="num7"></span>
+				</div>
+			</div>
+			<div class="now left">
+				<h3>2020年01月08日</h3>
+				<h3>18:02:57</h3>
+			</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			//210000 CC0000
+			var arr = [
+				[1,2,4,5,6,7],
+				[2, 4],
+				[1,2,3,5,6],
+				[1,2,3,4,5],
+				[2,3,4,7],
+				[1,3,4,5,7],
+				[1,3,4,5,6,7],
+				[1,2,4],
+				[1,2,3,4,5,6,7],
+				[1,2,3,4,5,7]
+			];
+			function loadContent(){
+				for(var i=0;i<5;i++){
+					
+				}
+			}
+			function setTimeColor(type, num){
+				num = num.toString();
+				var j = num.substring(0,1);
+				var k = num.substring(1);
+				for(var i=0; i<=arr.length; i++){
+					if(j == i){
+						for(var n=0; n<arr[i].length; n++){
+							var index = arr[i][n] - 1;
+							$("."+ type).find("."+ type +"a").find("span").eq(index).addClass("on");
+						}
+					}
+					if(k == i){
+						for(var n=0; n<arr[i].length; n++){
+							var index = arr[i][n] - 1;
+							$("."+ type).find("."+ type +"b").find("span").eq(index).addClass("on");
+						}
+					}
+				}
+			}
+			$(".clock").find("span").addClass("on");
+			window.setInterval(function (){
+				var date = new Date();
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				if(h < 10){
+					h = "0"+ h;
+				}
+				if(m < 10){
+					m = "0"+ m;
+				}
+				if(s < 10){
+					s = "0"+ s;
+				}
+				$(".clock").find("span").removeClass("on");
+				setTimeColor("hour", h);
+				setTimeColor("minute", m);
+				setTimeColor("second", s);
+				
+			}, 1000);
+			
+		</script>
+	</body>
+</html>

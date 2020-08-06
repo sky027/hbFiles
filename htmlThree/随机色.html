@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.warp{width: 100%;height: auto;}
+			.bocx{
+				display: block;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				border: 1px solid gold;
+				float: left;
+				margin: 7px;
+			}
+			.btns{
+				width: 150px;
+				position: fixed;
+				top: 100px;
+				left: 10px;
+			}
+			.btns button{
+				display: inline-block;
+				margin: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="warp" id="warp"></div>
+		<div class="btns">
+			<button id="start">开始</button>
+			<button id="des">正序</button>
+			<button id="asc">倒序</button>
+			<button id="random">随机</button>
+			<button id="reset">重置</button>
+		</div>
+		<!------------------------------------------------------------->
+		<script type="text/javascript">
+			// $("#warp").css('min-height', -20);
+			loadBox();
+			var timer;
+			$("#start").click(function() {
+				clearInterval(timer);
+				descSlide($(".bocx"), 1);
+			});
+			$("#des").click(function() {
+				clearInterval(timer);
+				descSlide($(".bocx"), 0);
+			});
+			$("#asc").click(function() {
+				clearInterval(timer);
+				ascSlide($(".bocx"), 0);
+			});
+			$("#random").click(function() {
+				clearInterval(timer);
+				randomSlide(50);
+			});
+			$("#reset").click(function() {
+				clearInterval(timer);
+				$(".bocx").css('background', '#fff');
+			});
+			function getNum(min, max) {
+				var num = Math.floor(Math.random() * (max - min)) + min;
+				return num;
+			}
+			function loadBox() {
+				var w = Math.floor($("#warp").width() / 26);
+				var hn = Math.floor(window.innerHeight / w);
+				var dom = $("#warp");
+				for (var i = 0; i < 7; i++) {
+					var html = '';
+					for (var k = 0; k < 30-1; k++) {
+						html += '<i class="bocx" style="width: '+ w +'px;height: '+ w +'px;"></i>';
+					}
+					dom.append(html);
+				}
+			}
+			function descSlide(list, type) {
+				var i = 0;
+				timer = window.setInterval(function() {
+					i++;
+					if(i <= list.length){
+						var r = getNum(0, 255);
+						var g = getNum(0, 255);
+						var b = getNum(0, 255);
+						var rgb = r+', '+g+', '+b;
+						console.log(rgb);
+						$(list[i]).css('background', 'rgb('+ rgb +')');
+						if(i > 0){
+							$(list[i-1]).css('background', '#fff');
+						}
+					} else {
+						clearInterval(timer);
+						if(type == 1){
+							ascSlide(list, 2);
+						}
+					}
+				}, 50);
+			}
+			function ascSlide(list, type) {
+				var i = list.length;
+				timer = window.setInterval(function() {
+					i--;
+					if(i > -1){
+						var r = getNum(0, 255);
+						var g = getNum(0, 255);
+						var b = getNum(0, 255);
+						var rgb = r+', '+g+', '+b;
+						console.log(rgb);
+						$(list[i]).css('background', 'rgb('+ rgb +')');
+						if(i < list.length){
+							$(list[i+1]).css('background', '#fff');
+						}
+					} else {
+						clearInterval(timer);
+						if(type == 2){
+							descSlide(list, 1);
+						}
+					}
+				}, 50);
+			}
+			function randomSlide(total) {
+				var list = $(".bocx");
+				var arr = [];
+				var domList = [];
+				for (var i = 0; i < total; i++) {
+					var n = getNum(0, list.length);
+					arr.push(n);
+					domList.push(list[n]);
+				}
+				descSlide(domList, 1);
+			}
+		</script>
+	</body>
+</html>

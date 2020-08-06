@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hp{height: 50px;line-height: 50px;font-size: 32px;text-align: center;
+			font-weight: bold;color: #fff;background: #B3D4FC;}
+		</style>
+	</head>
+	<body style="overflow: auto;" onDblClick="s=setInterval('scrollBy(0,2)',50)" onMousedown="clearInterval(s)" onload="s=0;">
+		<div id="boxs"></div>
+		<script type="text/javascript">
+			var dom = document.getElementById("boxs");
+			for (var i = 0; i < 100; i++) {
+				var ptag = document.createElement('p');
+				ptag.className = 'hp';
+				ptag.innerText = i;
+				dom.appendChild(ptag);
+			}
+		</script>
+	</body>
+</html>

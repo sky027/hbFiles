@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			button{margin-left: 15px;}
+		</style>
+	</head>
+	<body>
+		<div id="print4">
+			<div id="print1">
+				<h2 style="color: red;">
+					　　1.红尘是一个喧闹又萧索的大戏台，我们装扮着不同的角色，演绎着离合悲欢、生老病死。到最后，连自己亦分不清，哪段是真，哪段又是假。演了一辈子，唱了一辈子，过了一辈子，那些携手并肩的人，随着光阴，且行且远。--白落梅《相逢如初见回首是一生》
+				</h2>
+			</div>
+			<div id="print2">
+				<h2 style="color: blueviolet;">
+					　　2.千年的爱与千寻真切又模糊，月色清浓下，多少人将泪洒入长江，满载一江春愁，无语东流。也许，这世间有些遇见原本就是为了分离，可就是那样短暂的相聚，会让你相信，这一个就是永远，然后总有人会用一辈子的时间去缅怀与想念--那隔花的初见。--曾雅娴《花语为诗泪成词》
+				</h2>
+			</div>
+			<div id="print3">
+				<h2 style="color: gold;">
+					　　3.那时的青春萌动是多么美的一种情愫，一直到很久都会想着你曾经说过的话，还傻傻地以为这些话只会对我一人说，也常常幻想着会不会上演电视里的那种情景，在一个偶然的机会我们邂逅了……到后来慢慢明白，什么东西久了都会变质，无论什么也都不会有永远的美好，只有精彩的瞬间;亦不是你我变了，是这一切一切都抵不过时间的摧残。
+				</h2>
+			</div>
+		</div>
+		<br />
+		<p>
+			<h3>第一种打印方式</h3>
+			<button onclick="printOne(1)">打印第一部分</button>
+			<button onclick="printOne(2)">打印第二部分</button>
+			<button onclick="printOne(3)">打印第三部分</button>
+			<button onclick="printOne(4)">打印所有</button>
+		</p>
+		<br />
+		<p>
+			<h3>第二种打印方式</h3>
+			<button onclick="printTwo(1)">打印第一部分</button>
+			<button onclick="printTwo(2)">打印第二部分</button>
+			<button onclick="printTwo(3)">打印第三部分</button>
+			<button onclick="printTwo(4)">打印所有</button>
+		</p>
+		<p>
+			<h3>第三种打印方式</h3>
+			<button onclick="printThree(1)">打印第一部分</button>
+			<button onclick="printThree(2)">打印第二部分</button>
+			<button onclick="printThree(3)">打印第三部分</button>
+			<button onclick="printThree(4)">打印所有</button>
+		</p>
+		<script type="text/javascript">
+			function printOne(type) {
+				var head = '<html> <head> <title></title></head> <body>';
+				var foot = '</body></html>';
+				var body = '';
+				var old = document.body.innerHTML; 
+				body = document.all.item('print'+type).innerHTML; 
+				document.body.innerHTML = head + body + foot; 
+				window.print();
+				document.body.innerHTML = old;
+				return false; 
+			}
+			function printTwo(type){
+			    var newWindow = window.open("","_blank");
+			    var page = document.getElementById('print'+type).outerHTML;
+			    newWindow.document.write(page);
+			    newWindow.document.close();
+			    newWindow.print();
+			    newWindow.close();
+			}
+			function printThree(type){
+			    //判断iframe是否存在，不存在则创建iframe
+			    var iframe=document.getElementById("print-iframe");
+			    if(!iframe){  
+		            var el = document.getElementById("print"+type);
+		            iframe = document.createElement('IFRAME');
+		            var doc = null;
+		            iframe.setAttribute("id", "print-iframe");
+		            iframe.setAttribute('style', 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;');
+		            document.body.appendChild(iframe);
+		            doc = iframe.contentWindow.document;
+		            //这里可以自定义样式
+		            doc.write('<link rel="stylesheet" type="text/css" href="../css/print.css"/>');
+		            doc.write('<div>' + el.innerHTML + '</div>');
+		            doc.close();
+		            iframe.contentWindow.focus();     
+			    }
+			    iframe.contentWindow.print();
+			    /*if (navigator.userAgent.indexOf("MSIE") > 0){
+			        
+			    }*/
+			   document.body.removeChild(iframe);
+			    
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.liitem{display: block;height: 28px;line-height: 28px;}
+			.liitem span {display: inline-block;width: 140px;width: calc();}
+		</style>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../myjs/getJsonData.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<li class="liitem">
+				<span>#</span>
+				<span>编号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>省份</span>
+				<span>民族</span>
+				<span>联系电话</span>
+			</li>
+			<li v-for="(item, index) in dlist" :key="index" class="liitem">
+				<span>{{index+1}}</span>
+				<span>{{item.id}}</span>
+				<span>{{item.name}}</span>
+				<span>{{(item.sex==1)?'男':'女'}}</span>
+				<span>{{item.previce}}</span>
+				<span>{{item.nations}}</span>
+				<span>{{item.phone}}</span>
+			</li>
+			<p @click="getmore" style="cursor: pointer;">加载更多....</p>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					defautdata: [],
+					dlist: [],
+					clickSum: 1,
+					
+				},
+				mounted() {
+					var data = getJsonData.data(300);
+					this.defautdata = data;
+					this.getdata();
+				},
+				methods:{
+					getdata(){
+						this.dlist = [];
+						var arr = [];
+						for(var i=0;i<this.defautdata.length;i++){
+							if(i == this.clickSum*5){
+								break;
+							}else{
+								arr.push(this.defautdata[i]);
+							}
+						}
+						this.dlist = this.dlist.concat(arr);
+						console.log(this.dlist);
+					},
+					getmore(){
+						this.clickSum++;
+						this.getdata();
+					}
+				}
+				
+				
+				
+			});
+		</script>
+	</body>
+</html>

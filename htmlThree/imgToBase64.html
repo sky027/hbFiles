@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.imgs').click(function(){
+					var img = document.getElementById('imgs');
+					var urls = getBase64Image(img);
+					
+					$('.ppp').text(urls);
+					console.log(urls);
+				});
+				 
+				function getBase64Image(img) {  
+				    var canvas = document.createElement("canvas"); 
+				    canvas.width = $(img).width();  
+				    canvas.height = $(img).height();  
+				    var ctx = canvas.getContext("2d");  
+				    ctx.drawImage(img, 0, 0, $(img).width(), $(img).height());  
+				    var ext = img.src.substring(img.src.lastIndexOf(".")+1).toLowerCase();  
+				    var dataURL = canvas.toDataURL("image/"+ext);  
+				    return dataURL;  
+				} 
+				
+			});
+		</script>
+	</head>
+	<body>
+		<button class="imgs">OK</button><br />
+		<p class="ppp"></p>
+		<!--<img id="imgs" src="../img/tibet-1.jpg"/>-->
+		<img id="imgs" src="../img/images.jpg"/>
+	</body>
+</html>

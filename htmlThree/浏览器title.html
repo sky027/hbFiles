@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态title</title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css"/>
+		<style type="text/css">
+			.iconfont{
+				display: inline-block;height: 80px;width: 80px;
+				font-size: 30px;line-height: 80px;text-align: center;
+				transition: font-size 0.25s linear, width 0.25s linear;
+			    margin: 10px auto;
+			}
+			.iconfont:hover{font-size: 46px;}
+		</style>
+	</head>
+	<body>
+		<p>
+			<button class="btns">页面1</button>
+			<button class="btns">页面2</button>
+			<button class="btns">页面3</button>
+			<button class="btns">页面4</button>
+			<button class="btns">A页面</button>
+			<button class="btns">B页面1</button>
+			<button class="btns" value="1">刷新</button>
+		</p>
+		<div id="iconsArea"></div>
+		<script type="text/javascript">
+			$(".btns").click(function(){
+				var text = $(this).text();
+				var val = $(this).attr('value');
+				document.title = $(this).text();
+				if(val == '1'){
+					window.location.reload();
+				}
+			});
+			loadIcon();
+			function getNum(min, max) {
+				var num = Math.floor(Math.random() * (max - min)) + min;
+				return num;
+			}
+			function loadIcon(){
+				$.ajax({
+					url: '../css/font/iconfont.json',
+					type: 'get',
+					dataType: 'json',
+					success: function(res){
+						var list = res.glyphs;
+						var html = [];
+						for (var i = 0; i < list.length; i++) {
+							var name = list[i].name;
+							var cname = 'fiLink-' + list[i].font_class;
+							var r = getNum(0, 255);
+							var g = getNum(0, 255);
+							var b = getNum(0, 255);
+							var rgb = r+', '+g+', '+b;
+							html.push('<i title="'+ name +'" class="iconfont '+ cname +'" style="color: rgb('+ rgb +');"></i>');
+						}
+						$("#iconsArea").html(html);
+					},
+					error: function(res){
+						debugger;
+					}
+				});
+			}
+			window.setInterval(function(){
+				var list = $(".iconfont");
+				for (var i = 0; i < list.length; i++) {
+					var r = getNum(0, 255);
+					var g = getNum(0, 255);
+					var b = getNum(0, 255);
+					var rgb = r+', '+g+', '+b;
+					$(list[i]).css('color', 'rgb('+ rgb +')');
+				}
+			}, 3000);
+		</script>
+	</body>
+</html>

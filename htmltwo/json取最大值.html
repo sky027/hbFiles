@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<span>2132131&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</span>
+		<script type="text/javascript">
+			var name_value= [
+				{"name":"闵行区","value":20},
+				{"name":"浦东新区","value":30},
+				{"name":"杨浦区","value":60},
+				{"name":"浦东新区","value":50},
+				{"name":"浦东新区","value":60},
+			]
+            var list = new Array();
+            for(var i in name_value){
+            	list.push(name_value[i].value);
+            }
+            list.sort(function(num1,num2){
+            	return num1-num2;
+            })
+            var maxcnt= eval(list[list.length-1]);
+            
+            var a = [1,2,9,4,5,0,8];
+			var max = Math.max.apply(null, a);
+			var index = a.indexOf(max);
+			
+			
+			/*//(1)
+			var html = '<option value="01">男</option>'
+						+'<option value="02">女</option>'
+						+'<option value="03">其他</option>';
+			$("div[name='gender']").find("select").html(html);
+			//(2)
+			$("div[name='gender']").find("select").on("change", function(){
+				var value = $(this).val();
+				if(value == "03"){
+					var flag = confirm("Are You Sure?");
+					//(3)
+					if(flag){
+						$(this).after("<input />");
+					}else{
+						return;
+					}
+				}
+			});*/
+			var a = "asdfghj";
+			var b = "qwerty";
+			var c = "3";
+			c = parseInt(c);  //字符串转数字（string 转 number）
+			
+			a.sub
+			var str1 = a.substring(c, a.length);
+			if(c != b.length-1){
+				var str2 = b.substring(c+1, b.length);
+			}
+			
+			var newStr = str1 + str2; //拼接成新的字符串
+			console.log(newStr);
+			
+			
+			
+			
+			
+			
+			function removeProp(obj, prop){
+				if(obj.hasOwnProperty(prop)){
+					delete obj[prop];
+					return true;
+				}else{
+					return false;
+				}
+			}
+			var obj = {
+				flag: "1"
+			};
+			console.log(obj);
+			removeProp(obj, "flag");
+			console.log(obj);
+		</script>
+	</body>
+</html>

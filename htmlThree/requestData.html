@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button id="btn">OKOK</button>
+		<script type="text/javascript">
+			changeList();
+			$("#btn").click(function(){
+				$.ajax({
+					url: 'http://10.5.112.132:20000/repairOrder/getClearFailureById/dnVGsT86eRn77Gd94qd',
+					type: 'get',
+					data: {},
+					dataType: 'json',
+					success: function(res){
+						debugger
+					},
+					error: function(res){
+						debugger
+					}
+				})
+			});
+			// ------------
+			function changeList() {
+				var list = [
+					{name: "AAA", title: "aaa"},
+					{name: "AAA", title: "bbb"},
+					{name: "AAA", title: "ccc"},
+					{name: "DDD", title: "ddd"},
+					{name: "EEE", title: "eee"}
+				];
+				for(var i=0;i<list.length;i++){
+					for(var j=0;j<list.length-1;j++){
+						if(list[j].name != list[j+1].name){
+							console.log("不同");
+							return false;
+						} else {
+							console.log("属性相同" + (j+1));
+						}
+					}
+				}
+			}
+			setObj();
+			function setObj(){
+				var obj = {troubleTotal: "5", troubleLevel1: "2", troubleLevel2: "1", troubleLevel3: "1", troubleLevel4: "1"}
+				var arr = [];
+				for(var k in obj){
+					var data = {};
+					data[k] = obj[k];
+				    arr.push(data);
+				}
+				console.log(arr);
+			}
+			jsonFormmter();
+			function jsonFormmter(){
+				var str = '[{"filterValue":"123","filterField":"deviceName","operator":"like"},{"filterValue":"0","filterField":"result","operator":"eq"},{"filterValue":"123","filterField":"exceptionDescription","operator":"like"},{"filterValue":1591091820000,"filterField":"inspectionTime","operator":"gte","extra":"LT_AND_GT"},{"filterValue":1594720620999,"filterField":"inspectionTime","operator":"lte","extra":"LT_AND_GT"},{"filterValue":["1"],"filterField":"updateUser","operator":"in"},{"filterValue":"21312","filterField":"resourceMatching","operator":"like"}]';
+				var data = JSON.parse(str);
+				debugger;
+				data.forEach(v => {
+		        	v.filterField = 'procRelatedDevices.' + v.filterField;
+		      	});
+		      	console.log(data);
+			}
+		</script>
+	</body>
+</html>

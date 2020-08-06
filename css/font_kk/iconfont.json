@@ -1,0 +1,191 @@
+{
+  "id": "1899962",
+  "name": "private iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "kk",
+  "description": "个人私有测试使用字体图标库",
+  "glyphs": [
+    {
+      "icon_id": "7624663",
+      "name": "radio disabled",
+      "font_class": "-radio-disabled",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "8317300",
+      "name": "check-box",
+      "font_class": "-checkbox-hov",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "8777494",
+      "name": "star",
+      "font_class": "-collect",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "8777495",
+      "name": "star_filled",
+      "font_class": "-collected",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "8777509",
+      "name": "arrow_up",
+      "font_class": "-arrow_up",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "8777510",
+      "name": "arrow_left",
+      "font_class": "-arrow_left",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "8777511",
+      "name": "arrow_down",
+      "font_class": "-arrow_down",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "8777512",
+      "name": "arrow_right",
+      "font_class": "-arrow_right",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "9835799",
+      "name": "checkbox-checked",
+      "font_class": "-checkbox-checked",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "11186114",
+      "name": "checkbox",
+      "font_class": "-checkbox-slt",
+      "unicode": "e6f0",
+      "unicode_decimal": 59120
+    },
+    {
+      "icon_id": "13714375",
+      "name": "Ionicons ios radio button off",
+      "font_class": "-radio",
+      "unicode": "ee65",
+      "unicode_decimal": 61029
+    },
+    {
+      "icon_id": "13715912",
+      "name": "Ionicons ios radio button on",
+      "font_class": "-radio-hov",
+      "unicode": "eee2",
+      "unicode_decimal": 61154
+    },
+    {
+      "icon_id": "14319454",
+      "name": "Ionicons md radio button on",
+      "font_class": "-radio-slt",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "15122988",
+      "name": "Radiobox_Checked + Disabled",
+      "font_class": "-radio-checked-disabled",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "15359764",
+      "name": "checkbox",
+      "font_class": "-checkbox",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1403653",
+      "name": "A2",
+      "font_class": "-number_2",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1403654",
+      "name": "A7",
+      "font_class": "-number_7",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1403655",
+      "name": "A6",
+      "font_class": "-number_6",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1403656",
+      "name": "A8",
+      "font_class": "-number_8",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1403657",
+      "name": "A9",
+      "font_class": "-number_9",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1403658",
+      "name": "A5",
+      "font_class": "-number_5",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "1403659",
+      "name": "Ac",
+      "font_class": "-Ac",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1403661",
+      "name": "A1",
+      "font_class": "-number_1",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "1403662",
+      "name": "A0",
+      "font_class": "-number_0",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1404112",
+      "name": "A3",
+      "font_class": "-number_3",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1404113",
+      "name": "A4",
+      "font_class": "-number_4",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

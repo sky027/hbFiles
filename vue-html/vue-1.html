@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app" style="height: 750px;">
+			<input v-model="param.name" />--<input v-model="param.age" />
+			<div style="width: 100px;height: 40px;background: #795DA3;" @click="showInfo"></div>
+			<p v-if="isShow">{{param.name}}--{{param.age}}</p>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					param: {
+						name: '',
+						age: '',
+					},
+					isShow: false,
+				},
+				mounted() {},
+				methods: {
+					showInfo() {
+						this.isShow = !this.isShow;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

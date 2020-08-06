@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input class="ckinp" />
+		<span class="cspan"></span>
+		<script type="text/javascript">
+			$(".ckinp").blur(function(){
+				var val = $(this).val();
+				var reg = /^(?![0-9]+)(?![A-Z]+)[0-9A-Z]{3,5}$/;
+				var reg2 = /^([A-Z]+)([0-9]+){3,5}$/;
+				var reg3 = /^(?![0-9]+$)(?![A-Z]+$)[0-9A-Z]{5}$/;
+				if(reg3.test(val)){
+					$(".cspan").text(val);
+				} else{
+					$(".cspan").text("格式错误");
+				}
+			});
+		</script>
+	</body>
+</html>

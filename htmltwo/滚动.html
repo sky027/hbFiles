@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动</title>
+		<style type="text/css">
+			#affiche {
+			    color: red;
+			    display: block;
+			    width: 96%;
+			    height: 30px;
+			    margin: 0 auto;
+			    position: relative;
+			    overflow: hidden;
+			}
+			.affiche_text {
+			    position: absolute;
+			    top: 0;
+			    left: 100%;
+			    line-height: 30px;
+			    display: block;
+			    word-break: keep-all;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+    		}
+    		.scr1{
+    			width: 400px;
+    			height: 500px;
+    			border: 1px solid red;
+    			overflow-y: auto;
+    			overflow-x: hidden;
+    		}
+    		.scr2{
+    			width: 100%;
+    			padding: 15px;
+    			height: auto;
+    		}
+    		button{margin: 0 10px;cursor: pointer;}
+		</style>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="affiche">
+			<div class="affiche_text">
+			酒店 友情提示：1.周五、周六、节假日房价有一定上调，请以官网价格为准!
+			</div>
+		</div>
+		<div style="height: 40px;line-height: 40px;width: 300px;">
+			<button class="btn1">1/3地方</button>
+			<button class="btn2">2/3地方</button>
+			<button class="btn3">3/3地方</button>
+		</div>
+		<div class="scr1">
+			<div class="scr2">
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+				<h2>11111111</h2><br /><br /><br />
+			</div>
+		</div>
+		<script type="text/javascript">
+			(function(){
+				var timer = setTimeout(this.marquee, 1000);
+			}());
+		    function marquee() {
+		        var scrollWidth = $('#affiche').width();
+		        var textWidth = $('.affiche_text').width();
+		        var i = scrollWidth;
+		        setInterval(function() {
+		            i--;
+		            if(i < -textWidth ) {
+		                i = scrollWidth;
+		            }
+		            $('.affiche_text').animate({'left': i+'px'}, 20);
+		        }, 20);
+			}
+		    $(".btn1").click(function(){
+		    	$(".scr1").scrollTop(($(".scr2").height())*0.333);
+		    });
+		    $(".btn2").click(function(){
+		    	$(".scr1").scrollTop(($(".scr2").height())*0.666);
+		    });
+		    $(".btn3").click(function(){
+		    	$(".scr1").scrollTop(($(".scr2").height())*0.999);
+		    });
+		</script>
+	</body>
+</html>

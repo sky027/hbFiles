@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.box-i{
+				display: block;
+				margin: 8px;
+				background: #795DA3;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				float: left;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 36px;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<select class="article">
+				<option value="3">3 个</option>
+				<option value="5">5 个</option>
+				<option value="7">7 个</option>
+			</select>
+		</p>
+		<div class="box-area"></div>
+		<script type="text/javascript">
+			$(".article").change(function() {
+				$(".box-area").empty();
+				var val = parseInt($(this).val());
+				for (var i = 1; i <= val; i++) {
+					var html = '<i class="box-i">'+ i +'</i>';
+					$(".box-area").append(html);
+				}
+			});
+		</script>
+	</body>
+</html>

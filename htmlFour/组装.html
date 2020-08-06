@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button id="btn">OKOK</button>
+		<br /><br />
+		<button id="btn2">OKOK2</button>
+		
+		
+		<script type="text/javascript">
+			$("#btn").click(function(){
+				$.ajax({
+					type:"get",
+					url:"./Untitled.json",
+					async:true,
+					success: function(res){
+						debugger
+						const device = res.deviceList;
+						const equipment = res.equipmentList;
+						const result = [];
+						for (var i = 0; i < device.length; i++) {
+							const data = {
+								deviceId: device[i].deviceId,
+								name: device[i].deviceName,
+								type: device[i].deviceType,
+								code: device[i].deviceCode,
+								positionBase: device[i].positionBase,
+								area: device[i].address,
+							};
+							for (var k = 0; k < equipment.length; k++) {
+								if(device[i].deviceId == equipment[i].deviceId){
+									data['children'] = {
+										name: equipment[k].equipmentName,
+										type: equipment[k].equipmentType,
+										code: equipment[k].equipmentCode,
+										area: device[i].address,
+									};
+								}
+							}
+							result.push(data);
+						}
+						console.log(result);
+					},
+					error: function(res){
+						debugger
+					},
+				});
+			});
+			$("#btn2").click(function(){
+				var str = '[{"deviceType":"003","equipmentTypeList":["E007","E008","E009","E010","E011"]},{"deviceType":"001","equipmentTypeList":["E002","E005","E006","E007","E008"]},{"deviceType":"002","equipmentTypeList":["E001","E003","E004","E005","E006"]},{"deviceType":"210","equipmentTypeList":["E004","E005","E006","E007","E008"]},{"deviceType":"090","equipmentTypeList":["E001","E005","E006","E007","E008","E011"]},{"deviceType":"060","equipmentTypeList":["E003","E004","E005","E010","E011"]},{"deviceType":"030","equipmentTypeList":["E001","E009","E010","E011"]}]';
+				var list = JSON.parse(str);
+				debugger;
+				var arr = [{a: '1',b: '2',c: '3',}];
+				var s = arr.map(v => {
+					return {d: v.a, e: v.b};
+				});
+			});
+			/*---------------------------------------------------------------------------------------*/
+			var point = [{
+          pointCode: targetDom.find('input[name="pointCode_v"]').val(),
+          pointName: targetDom.find('input[name="pointCode"]').val()
+       }];
+			var pointCodes = (targetDom.find('input[name="pointCode_v"]').val()).split(',');
+			var pointNames = (targetDom.find('input[name="pointCode"]').val()).split(',');
+			var point = [];
+			if (pointCodes.length == pointNames.length) {
+				for (var i = 0; i < pointCodes.length; i++) {
+					point.push({
+						pointCode: pointCodes[i],
+						pointName: pointNames[i]
+					});
+				}
+			}
+			console.log(point);
+			
+			
+		</script>
+	</body>
+</html>

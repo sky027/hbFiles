@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#btn{cursor: pointer;}
+			#btn:hover{background: #FAFAFA;}
+		</style>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p><button id="btn">获取图片</button></p>
+		<div id="imgs">
+			
+		</div>
+		<script type="text/javascript">
+			// 'https://picsum.photos/300/150/?image=' + getRandomNumberByRange(0, 100)
+			$("#btn").click(function(){
+				$("#btn").attr('disabled', 'disabled');
+				var url = 'https://picsum.photos/300/150/?image=' + getRandomNumberByRange(0, 100);
+				var html = '<img class="add-img" src="'+ url +'"/>';
+				$('#imgs').append(html);
+				disabledBtn(3, $("#btn"));
+			});
+			function disabledBtn(n, dom){
+				var timer = setTimeout(function(){
+					dom.removeAttr('disabled');
+					clearTimeout(timer);
+				}, n*1000);
+			}
+			function getRandomNumberByRange(start, end) {
+		    	return Math.round(Math.random() * (end - start) + start)
+		    }
+		</script>
+	</body>
+</html>
