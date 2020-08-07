@@ -1,0 +1,2188 @@
+{
+	"address": "光谷关山大道",
+	"createTime": 1550824913456,
+	"deleted": "0",
+	"department": {
+		"areaIdList": [
+			"DKtkQtfmtiXbI8nVY4M",
+			"lN0LzYvTLyVgoFYb1uV",
+			"pqUs4SGaA0BZX2xjx2m",
+			"pP5d1nu2Da2nnaI4sdS",
+			"KX44HxmBz83ghoD1are",
+			"65UU4zznkWIJ2zaGODS",
+			"Y8uuGiz0ImNyc2XtuUu",
+			"PDsMcxMhhrNMWcDUKI3",
+			"fIsLFuYxatxxPsFMVpy",
+			"RqeJ5M30X0MYPU1ZlH9",
+			"5TKFaxlBOhIkKBTpuod",
+			"cFuomywTItgWz4Sigl7",
+			"ZIXhBoe5R2xOIoXbt0q",
+			"kR8MHv1yueCkfcFr9Kz",
+			"3UqDzsHniRh4gaCMKH1"
+		],
+		"deptName": "超级管理员单位",
+		"id": "MJeUB48u0fKSCJvgK3w"
+	},
+	"deptId": "MJeUB48u0fKSCJvgK3w",
+	"email": "15926499574@163.com",
+	"expireTime": 36000,
+	"id": "1",
+	"lastLoginIp": "10.5.112.46",
+	"lastLoginTime": 1595207840365,
+	"loginIp": "10.5.112.194",
+	"loginSourse": "1",
+	"loginType": "2",
+	"maxUsers": 100,
+	"password": "e10adc3949ba59abbe56e057f20f883e",
+	"phoneNumber": "15926499574",
+	"role": {
+		"defaultRole": 0,
+		"id": "superAdmin",
+		"permissionList": [
+			{
+				"id": "06-1-1-11",
+				"interfaceUrl": "/inspectionOrder/getInspectionProcByIdForComplete",
+				"menuId": "",
+				"name": "已完工巡检工单详情",
+				"route_url": "/business/work-order/inspection/unfinished-detail/finishedView"
+			},
+			{
+				"id": "04-5-6",
+				"interfaceUrl": "/systemParam/queryParam/10",
+				"menuId": "06/6-5/6-5-6",
+				"name": "FTP服务设置",
+				"route_url": "/business/system/system-parameter/ftp"
+			},
+			{
+				"id": "06-1-2-2",
+				"interfaceUrl": "/inspectionTask/updateInspectionTask",
+				"menuId": "",
+				"name": "编辑巡检任务",
+				"route_url": "/business/work-order/inspection/task-detail/update"
+			},
+			{
+				"id": "11-9",
+				"name": "设施升级"
+			},
+			{
+				"id": "03-1-11",
+				"name": "远程开锁"
+			},
+			{
+				"id": "14-1-8",
+				"interfaceUrl": "/process/flowChart",
+				"menuId": "",
+				"name": "查看流程",
+				"route_url": "/business/trouble/trouble-list/flow"
+			},
+			{
+				"id": "03-8-4",
+				"name": "网关配置",
+				"route_url": "/business/facility/gateway-config"
+			},
+			{
+				"id": "04-5-2-1",
+				"interfaceUrl": "/systemParameter/updateMessageNotification",
+				"name": "修改消息通知设置"
+			},
+			{
+				"id": "04-6",
+				"menuId": "06/6-6",
+				"name": "License管理",
+				"route_url": "/business/system/license"
+			},
+			{
+				"id": "11-5",
+				"name": "设施状态"
+			},
+			{
+				"id": "03-1-12",
+				"name": "设施统计"
+			},
+			{
+				"id": "12-4",
+				"name": "标签业务信息查询"
+			},
+			{
+				"id": "07-3-8",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByDeviceType",
+				"menuId": "07/7-4/7-4-8",
+				"name": "巡检工单设施类型统计",
+				"route_url": "/business/statistical-report/work-order-statistical/inspection/facility-type"
+			},
+			{
+				"id": "07-3-6",
+				"interfaceUrl": "/procStatistical/queryProcAddListCountGroupByDay",
+				"menuId": "07/7-4/7-4-6",
+				"name": "销障工单增量统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/increment"
+			},
+			{
+				"id": "06-1-2-8",
+				"interfaceUrl": "/inspectionTask/getInspectionTaskDetailById",
+				"menuId": "",
+				"name": "巡检任务详情",
+				"route_url": "/business/work-order/inspection/unfinished-detail/taskView"
+			},
+			{
+				"id": "07-8-1",
+				"interfaceUrl": "/statistics/queryUnlockingTopNum",
+				"menuId": "07/7-8/7-8-1",
+				"name": "开锁次数统计",
+				"route_url": "/business/statistical-report/top-lock"
+			},
+			{
+				"id": "07-4",
+				"menuId": "07/7-3",
+				"name": "ODN设施资源统计统计"
+			},
+			{
+				"id": "07-2-4",
+				"interfaceUrl": "/statistics/queryDeviceSensorValues",
+				"menuId": "07/7-2/7-2-4",
+				"name": "设施传感值统计",
+				"route_url": "/business/statistical-report/device-sensor"
+			},
+			{
+				"id": "06-2-1",
+				"interfaceUrl": "/repairOrder/queryListClearFailureProcessByPage",
+				"menuId": "03-2-1",
+				"name": "未完工销障工单列表",
+				"route_url": "/business/work-order/clear-barrier/unfinished-list"
+			},
+			{
+				"id": "03-1-5",
+				"interfaceUrl": "/deviceInfo/findDeviceById",
+				"name": "查询设施详情",
+				"route_url": "/business/facility/facility-detail-view"
+			},
+			{
+				"id": "01-5",
+				"menuId": "04/4-5",
+				"name": "设施授权管理"
+			},
+			{
+				"id": "06-1-1-7",
+				"interfaceUrl": "/inspectionOrder/queryListCompleteInspectionByPage",
+				"menuId": "",
+				"name": "查看",
+				"route_url": ""
+			},
+			{
+				"id": "09-1-3-1",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "策略详情",
+				"route_url": "/business/application/lighting/policy-details"
+			},
+			{
+				"id": "11-12",
+				"name": "告警查询"
+			},
+			{
+				"id": "04-3-2-1",
+				"name": "修改HTTP服务配置"
+			},
+			{
+				"id": "06-1-2-7",
+				"interfaceUrl": "/inspectionTask/closeInspectionTaskBatch",
+				"menuId": "",
+				"name": "禁用",
+				"route_url": ""
+			},
+			{
+				"id": "02-3-2",
+				"interfaceUrl": "/alarmSet/selectAlarmDelay",
+				"menuId": "05/5-3/5-3-2",
+				"name": "历史告警设置",
+				"route_url": "/business/alarm/history-alarm-set"
+			},
+			{
+				"id": "03-3-2",
+				"interfaceUrl": "/picRelationInfo/deleteImageIsDeletedByIds",
+				"name": "删除图片"
+			},
+			{
+				"id": "02-2-3",
+				"name": "历史告警图片"
+			},
+			{
+				"id": "03-1-16",
+				"name": "设施停用"
+			},
+			{
+				"id": "02-3-5-4",
+				"interfaceUrl": "/alarmOrderRule/updateAlarmOrderRule    ",
+				"name": "告警转工单修改",
+				"route_url": "/business/alarm/alarm-work-order/update"
+			},
+			{
+				"id": "07-3-3",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByProcProcessingScheme",
+				"menuId": "07/7-4/7-4-3",
+				"name": "销障工单处理方案统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/processing"
+			},
+			{
+				"id": "09",
+				"interfaceUrl": "",
+				"menuId": "09",
+				"name": "应用系统",
+				"route_url": "/business/application"
+			},
+			{
+				"id": "13",
+				"name": "App登录"
+			},
+			{
+				"id": "04-4-3",
+				"interfaceUrl": "/systemParam/queryParam/1",
+				"menuId": "06/6-4/6-4-3",
+				"name": "密码安全策略",
+				"route_url": "/business/system/security-policy/password"
+			},
+			{
+				"id": "04-1-4",
+				"interfaceUrl": "/menu/updateMenuTemplate",
+				"name": "修改菜单配置模板",
+				"route_url": "/business/system/menu-update"
+			},
+			{
+				"id": "06-1-1-4",
+				"interfaceUrl": "/inspectionOperate/revokeProc",
+				"menuId": "",
+				"name": "撤回",
+				"route_url": ""
+			},
+			{
+				"id": "07-3",
+				"menuId": "07/7-4",
+				"name": "工单统计"
+			},
+			{
+				"id": "11-8",
+				"name": "日志查询"
+			},
+			{
+				"id": "09-4",
+				"interfaceUrl": "",
+				"menuId": "09-4",
+				"name": "策略管理",
+				"route_url": "/business/application/strategy"
+			},
+			{
+				"id": "02-3-3-4",
+				"interfaceUrl": "/alarmFilterRule/updateAlarmFilterRule",
+				"name": "告警过滤修改",
+				"route_url": "/business/alarm/alarm-filtration/update"
+			},
+			{
+				"id": "04-5",
+				"menuId": "06/6-5",
+				"name": "系统参数"
+			},
+			{
+				"id": "14-1-7",
+				"interfaceUrl": "",
+				"menuId": "",
+				"name": "故障定位",
+				"route_url": "/business/index"
+			},
+			{
+				"id": "09-2-1",
+				"interfaceUrl": "",
+				"menuId": "09-2-1",
+				"name": "信息发布工作台",
+				"route_url": "/business/application/release/workbench"
+			},
+			{
+				"id": "11-3",
+				"name": "基础信息"
+			},
+			{
+				"id": "02-3-3",
+				"interfaceUrl": "/alarmFilterRule/queryAlarmFilterRuleList",
+				"menuId": "05/5-3/5-3-3",
+				"name": "告警过滤列表",
+				"route_url": "/business/alarm/alarm-filtration"
+			},
+			{
+				"id": "01-1-5",
+				"interfaceUrl": "/user/updateUserStatus",
+				"name": "修改用户状态"
+			},
+			{
+				"id": "02-3-5",
+				"interfaceUrl": "/alarmOrderRule/queryAlarmOrderRuleList",
+				"menuId": "05/5-3/5-3-5",
+				"name": "告警转工单列表",
+				"route_url": "/business/alarm/alarm-work-order"
+			},
+			{
+				"id": "03-1-15",
+				"name": "设施撤防"
+			},
+			{
+				"id": "02-3-4-4",
+				"interfaceUrl": "/alarmForwardRule/updateAlarmForwardRule     ",
+				"name": "告警远程通知修改",
+				"route_url": "/business/alarm/alarm-remote-notification/update"
+			},
+			{
+				"id": "01-2-2",
+				"interfaceUrl": "/department/update,/department/queryDeptInfoById/",
+				"name": "修改单位",
+				"route_url": "/business/user/unit-detail/update"
+			},
+			{
+				"id": "03-9-2",
+				"name": "编辑分组",
+				"route_url": "/business/facility/group-detail/update"
+			},
+			{
+				"id": "07-3-9",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByProcStatus",
+				"menuId": "07/7-4/7-4-9",
+				"name": "巡检工单状态统计",
+				"route_url": "/business/statistical-report/work-order-statistical/inspection/status"
+			},
+			{
+				"id": "06-1-1-8",
+				"interfaceUrl": "/inspectionOperate/getInspectionProcByIdForProcess",
+				"menuId": "",
+				"name": "查看详情",
+				"route_url": "/business/work-order/inspection/unfinished-detail/unfinishedView"
+			},
+			{
+				"id": "01-4-1",
+				"interfaceUrl": "/user/forceOffline",
+				"name": "强制下线"
+			},
+			{
+				"id": "03-6-6",
+				"name": "光缆段列表",
+				"route_url": "/business/facility/view-cable"
+			},
+			{
+				"id": "09-4-1-6",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "禁用",
+				"route_url": ""
+			},
+			{
+				"id": "07-1-2",
+				"menuId": "07/7-1/7-1-2",
+				"name": "告警处理统计",
+				"route_url": "/business/statistical-report/alarm-statistical/alarm-dispose"
+			},
+			{
+				"id": "09-2-3-3",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "删除策略",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-2-6",
+				"interfaceUrl": "/inspectionTask/openInspectionTaskBatch",
+				"menuId": "",
+				"name": "启用",
+				"route_url": ""
+			},
+			{
+				"id": "07-7",
+				"menuId": "07/7-5",
+				"name": "日志统计",
+				"route_url": "/business/statistical-report/log-statistical"
+			},
+			{
+				"id": "06-3-1",
+				"interfaceUrl": "/inspectionTemplate/queryListTemplateByPage",
+				"menuId": "",
+				"name": "巡检模板列表",
+				"route_url": "/business/work-order/inspection-template/template-list"
+			},
+			{
+				"id": "03-1-7",
+				"name": "配置业务信息",
+				"route_url": "/business/facility/business-information"
+			},
+			{
+				"id": "03-1-5-2",
+				"name": "查看纤芯成端"
+			},
+			{
+				"id": "04-3",
+				"menuId": "06/6-3",
+				"name": "协议管理"
+			},
+			{
+				"id": "09-4-1",
+				"interfaceUrl": "",
+				"menuId": "09-4",
+				"name": "策略管理",
+				"route_url": "/business/application/strategy/list"
+			},
+			{
+				"id": "02-3-4-3",
+				"interfaceUrl": "/alarmForwardRule/batchUpdateAlarmForwardRuleStatus",
+				"name": "禁止告警远程通知"
+			},
+			{
+				"id": "03-1-3",
+				"interfaceUrl": "/deviceInfo/updateDeviceById",
+				"name": "修改设施",
+				"route_url": "/business/facility/facility-detail/update"
+			},
+			{
+				"id": "03-2-2",
+				"interfaceUrl": "/areaInfo/addArea",
+				"name": "新增区域",
+				"route_url": "/business/facility/area-detail/add"
+			},
+			{
+				"id": "04-1-3",
+				"interfaceUrl": "/menu/addMenuTemplate",
+				"name": "新增菜单配置模板",
+				"route_url": "/business/system/menu-add"
+			},
+			{
+				"id": "03-2-4",
+				"interfaceUrl": "/areaInfo/deleteAreaByIds",
+				"name": "删除区域"
+			},
+			{
+				"id": "06",
+				"interfaceUrl": "",
+				"menuId": "03",
+				"name": "工单管理",
+				"route_url": ""
+			},
+			{
+				"id": "01-5-1-6",
+				"interfaceUrl": "/unifyauth/batchModifyUnifyAuthStatus",
+				"name": "修改统一授权状态"
+			},
+			{
+				"id": "09-1-2-3",
+				"interfaceUrl": "",
+				"menuId": "09-1-2",
+				"name": "回路详情",
+				"route_url": "/business/application/lighting/equipment-list/loop-policy-details"
+			},
+			{
+				"id": "02-1-1",
+				"interfaceUrl": "/alarmCurrent/updateAlarmConfirmStatus",
+				"name": "告警确认"
+			},
+			{
+				"id": "05-1",
+				"interfaceUrl": "business/index",
+				"menuId": "05-1",
+				"name": "基本功能",
+				"route_url": ""
+			},
+			{
+				"id": "12-8",
+				"name": "GIS标签管理"
+			},
+			{
+				"id": "07-3-10",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByAreaPercent",
+				"menuId": "07/7-4/7-4-10",
+				"name": "巡检工单比类型",
+				"route_url": "/business/statistical-report/work-order-statistical/inspection/percent"
+			},
+			{
+				"id": "04",
+				"name": "系统设置"
+			},
+			{
+				"id": "04-3-3",
+				"menuId": "06/6-3/6-3-3",
+				"name": "HTTPS服务配置",
+				"route_url": "/business/system/agreement/config/https-serve"
+			},
+			{
+				"id": "02-1",
+				"interfaceUrl": "/alarmCurrent/queryAlarmCurrentList",
+				"menuId": "05/5-1",
+				"name": "当前告警列表",
+				"route_url": "/business/alarm/current-alarm"
+			},
+			{
+				"id": "03-6-7",
+				"name": "查看光缆段智能标签列表",
+				"route_url": "/business/facility/view-cable"
+			},
+			{
+				"id": "01-1-6",
+				"interfaceUrl": "/user/importUserInfo",
+				"name": "用户导入"
+			},
+			{
+				"id": "07-8-5",
+				"menuId": "07/7-8/7-8-5",
+				"name": "端口资源使用率统计",
+				"route_url": "/business/statistical-report/top-port"
+			},
+			{
+				"id": "09-2-3",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "信息发布策略",
+				"route_url": "/business/application/release/policy-control"
+			},
+			{
+				"id": "07-3-2",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByProcStatus",
+				"menuId": "07/7-4/7-4-2",
+				"name": "销障工单状态统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/status"
+			},
+			{
+				"id": "06-2-1-6",
+				"interfaceUrl": "/repairOperate/checkSingleBack",
+				"menuId": "",
+				"name": "退单处理",
+				"route_url": ""
+			},
+			{
+				"id": "09-2-2-1",
+				"interfaceUrl": "",
+				"menuId": "09-2-2",
+				"name": "设备详情",
+				"route_url": "/business/application/release/equipment-list/policy-details"
+			},
+			{
+				"id": "01-5-2",
+				"interfaceUrl": "/tempauth/queryTempAuthByCondition",
+				"menuId": "04/4-5/4-5-2",
+				"name": "临时授权列表",
+				"route_url": "/business/user/temporary-authorization"
+			},
+			{
+				"id": "06-1-1-3",
+				"interfaceUrl": "/inspectionOrder/deleteProc",
+				"menuId": "",
+				"name": "删除巡检工单",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-1-6",
+				"interfaceUrl": "/inspectionOperate/checkSingleBack",
+				"menuId": "",
+				"name": "退单",
+				"route_url": ""
+			},
+			{
+				"id": "12-5",
+				"name": "标签初始化录入"
+			},
+			{
+				"id": "03-2",
+				"interfaceUrl": "/areaInfo/areaListByPage",
+				"menuId": "02/02-6",
+				"name": "区域管理",
+				"route_url": "/business/facility/area-list"
+			},
+			{
+				"id": "02-3-5-5",
+				"interfaceUrl": "/alarmOrderRule/batchDeleteAlarmOrderRule",
+				"name": "删除告警转工单"
+			},
+			{
+				"id": "02-2-1",
+				"interfaceUrl": "/alarmHistory/batchUpdateAlarmRemark",
+				"name": "历史告警备注"
+			},
+			{
+				"id": "09-2-3-2",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "新增策略",
+				"route_url": "/business/application/release/policy-control/add"
+			},
+			{
+				"id": "06-1-2-5",
+				"interfaceUrl": "/inspectionTask/deleteInspectionTaskByIds",
+				"menuId": "",
+				"name": "删除",
+				"route_url": ""
+			},
+			{
+				"id": "04-5-6-1",
+				"interfaceUrl": "/systemParameter/updateFtpSettings",
+				"name": "修改FTP服务设置"
+			},
+			{
+				"id": "11",
+				"name": "基础属性和智能门禁"
+			},
+			{
+				"id": "09-2-4",
+				"interfaceUrl": "",
+				"menuId": "09-2",
+				"name": "内容列表",
+				"route_url": "/business/application/release/content-list"
+			},
+			{
+				"id": "09-3-2-1",
+				"interfaceUrl": "",
+				"menuId": "09-3-2",
+				"name": "设备详情",
+				"route_url": "/business/application/security/equipment-list/policy-details"
+			},
+			{
+				"id": "02-3-5-4-1",
+				"interfaceUrl": "/alarmOrderRule/updateAlarmOrderRule",
+				"name": "修改告警转工单",
+				"route_url": "/business/alarm/alarm-work-order/update"
+			},
+			{
+				"id": "02-3-3-3",
+				"interfaceUrl": "/alarmFilterRule/batchUpdateAlarmFilterRuleStatus",
+				"name": "禁用告警过滤"
+			},
+			{
+				"id": "09-1-3-4",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "删除策略",
+				"route_url": ""
+			},
+			{
+				"id": "07-5-1",
+				"menuId": "07/7-6/7-6-1",
+				"name": "柜内跳接关系统计",
+				"route_url": "/business/statistical-report/odn-jump/inner"
+			},
+			{
+				"id": "12",
+				"name": "智能标签权限"
+			},
+			{
+				"id": "03-1-5-4-1",
+				"name": "删除对端端口信息"
+			},
+			{
+				"id": "09-1-2-1",
+				"interfaceUrl": "",
+				"menuId": "09-1-2",
+				"name": "设备详情",
+				"route_url": "/business/application/lighting/equipment-list/policy-details"
+			},
+			{
+				"id": "03-6-1",
+				"name": "添加光缆",
+				"route_url": "/business/facility/view-cable-detail/add"
+			},
+			{
+				"id": "11-13",
+				"name": "电量重置"
+			},
+			{
+				"id": "09-1-2-2",
+				"interfaceUrl": "",
+				"menuId": "09-1-2",
+				"name": "分组详情",
+				"route_url": "/business/application/lighting/equipment-list/group-policy-details"
+			},
+			{
+				"id": "02-3-5-3",
+				"interfaceUrl": "/alarmOrderRule/batchUpdateAlarmOrderRuleStatus",
+				"name": "禁止告警转工单"
+			},
+			{
+				"id": "06-3",
+				"interfaceUrl": "",
+				"menuId": "03-3",
+				"name": "巡检模板",
+				"route_url": ""
+			},
+			{
+				"id": "07-4-3",
+				"menuId": "07/7-3/7-3-3",
+				"name": "盘统计\r\n",
+				"route_url": "/business/statistical-report/odn-disc"
+			},
+			{
+				"id": "01-5-2-6",
+				"name": "查看临时授权范围"
+			},
+			{
+				"id": "06-1-1-10",
+				"interfaceUrl": "/inspectionOrder/queryListCompleteInspectionByPage",
+				"menuId": "",
+				"name": "已完成巡检信息",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-3-2",
+				"interfaceUrl": "/inspectionOrder/queryListCompleteInspectionByPage",
+				"menuId": "",
+				"name": "查看",
+				"route_url": ""
+			},
+			{
+				"id": "09-1-2",
+				"interfaceUrl": "",
+				"menuId": "09-1-2",
+				"name": "设备列表",
+				"route_url": "/business/application/lighting/equipment-list"
+			},
+			{
+				"id": "08",
+				"menuId": "08",
+				"name": "大屏管理",
+				"route_url": "/business/screen"
+			},
+			{
+				"id": "04-5-2",
+				"interfaceUrl": "/systemParam/queryParam/7",
+				"menuId": "06/6-5/6-5-2",
+				"name": "消息通知设置",
+				"route_url": "/business/system/system-parameter/msg"
+			},
+			{
+				"id": "01-5-1-3",
+				"interfaceUrl": "/unifyauth/modifyUnifyAuth",
+				"name": "修改统一授权",
+				"route_url": "/business/user/unified-details/update"
+			},
+			{
+				"id": "14-1-1",
+				"interfaceUrl": "/trouble/addTrouble",
+				"menuId": "",
+				"name": "故障新增",
+				"route_url": "/business/trouble/trouble-list/add"
+			},
+			{
+				"id": "09-1-1",
+				"interfaceUrl": "",
+				"menuId": "09-1-1",
+				"name": "照明工作台",
+				"route_url": "/business/application/lighting/workbench"
+			},
+			{
+				"id": "01-2-4",
+				"interfaceUrl": "/user/queryUserList",
+				"name": "下属人员"
+			},
+			{
+				"id": "09-2-5",
+				"interfaceUrl": "",
+				"menuId": "09-2",
+				"name": "内容审核工单",
+				"route_url": "/business/application/release/content-examine"
+			},
+			{
+				"id": "09-2-3-1",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "策略详情",
+				"route_url": "/business/application/release/policy-details"
+			},
+			{
+				"id": "07-1-5",
+				"menuId": "07/7-1/7-1-5",
+				"name": "告警增量统计",
+				"route_url": "/business/statistical-report/alarm-statistical/alarm-increment"
+			},
+			{
+				"id": "11-1",
+				"name": "销障工单"
+			},
+			{
+				"id": "06-1-3",
+				"interfaceUrl": "/inspectionOrder/queryListInspectionCompleteRecordByPage",
+				"menuId": "03-1-3",
+				"name": "已完工列表",
+				"route_url": ""
+			},
+			{
+				"id": "09-1-3",
+				"interfaceUrl": "",
+				"menuId": "09-1",
+				"name": "照明策略",
+				"route_url": "/business/application/lighting/policy-control"
+			},
+			{
+				"id": "04-4",
+				"menuId": "06/6-4",
+				"name": "安全策略"
+			},
+			{
+				"id": "06-2-2-3",
+				"interfaceUrl": "/repairOrder/regenerateClearFailureProc",
+				"menuId": "",
+				"name": "重新生成销障工单",
+				"route_url": "/business/work-order/clear-barrier/unfinished-detail/rebuild"
+			},
+			{
+				"id": "06-2-1-4",
+				"interfaceUrl": "/repairOperate/assignProc",
+				"menuId": "",
+				"name": "指派",
+				"route_url": ""
+			},
+			{
+				"id": "12-2",
+				"name": "光缆段信息管理"
+			},
+			{
+				"id": "07-2-3",
+				"interfaceUrl": "/statistics/queryDeployStatusCount",
+				"menuId": "07/7-2/7-2-3",
+				"name": "设施部署状态统计",
+				"route_url": "/business/statistical-report/device-deploy"
+			},
+			{
+				"id": "01-5-1",
+				"interfaceUrl": "/unifyauth/queryUnifyAuthByCondition",
+				"menuId": "04/4-5/4-5-1",
+				"name": "统一授权列表",
+				"route_url": "/business/user/unified-authorization"
+			},
+			{
+				"id": "02-2",
+				"interfaceUrl": "/alarmHistory/queryAlarmHistoryList",
+				"menuId": "05/5-2",
+				"name": "历史告警列表",
+				"route_url": "/business/alarm/history-alarm"
+			},
+			{
+				"id": "00",
+				"name": "电脑终端操作"
+			},
+			{
+				"id": "04-3-4-1",
+				"name": "修改Webservice服务配置"
+			},
+			{
+				"id": "06-2-1-5",
+				"interfaceUrl": "/repairOrder/deleteProc",
+				"menuId": "",
+				"name": "删除",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-2-4",
+				"interfaceUrl": "/inspectionTaskObject/findDeviceIdListByInspectionTaskId",
+				"menuId": "",
+				"name": "巡检对象",
+				"route_url": ""
+			},
+			{
+				"id": "06-2-2-2",
+				"interfaceUrl": "/picRelationInfo/getClearFailureByIdForComplete",
+				"menuId": "",
+				"name": "已完工销障工单详情",
+				"route_url": "/business/work-order/clear-barrier/finished-detail/view"
+			},
+			{
+				"id": "06-2-1-1",
+				"interfaceUrl": "/repairOrder/addClearFailureProc",
+				"menuId": "",
+				"name": "新增工单",
+				"route_url": "/business/work-order/clear-barrier/unfinished-detail/add"
+			},
+			{
+				"id": "02-1-4",
+				"interfaceUrl": "/alarmCurrent/updateAlarmRemark",
+				"name": "当前告警备注"
+			},
+			{
+				"id": "06-1-2-1",
+				"interfaceUrl": "/inspectionTask/insertInspectionTask",
+				"menuId": "",
+				"name": "新增巡检任务",
+				"route_url": "/business/work-order/inspection/task-detail/add"
+			},
+			{
+				"id": "03-10-3",
+				"name": "查看详情",
+				"route_url": "/business/facility/loop-view-detail"
+			},
+			{
+				"id": "03-1-17",
+				"name": "设施维护"
+			},
+			{
+				"id": "09-2-2-2",
+				"interfaceUrl": "",
+				"menuId": "09-2-2",
+				"name": "分组详情",
+				"route_url": "/business/application/release/equipment-list/group-policy-details"
+			},
+			{
+				"id": "11-4",
+				"name": "智能门禁"
+			},
+			{
+				"id": "03-6-3",
+				"name": "删除光缆"
+			},
+			{
+				"id": "04-3-1-2",
+				"interfaceUrl": "/deviceProtocol/updateDeviceProtocol,/deviceProtocol/updateProtocolName,/deviceProtocol/queryFileLimit",
+				"name": "修改设施协议"
+			},
+			{
+				"id": "03-10",
+				"menuId": "02/02-11",
+				"name": "回路管理",
+				"route_url": "/business/facility/loop-list"
+			},
+			{
+				"id": "04-7-1",
+				"menuId": "06/6-7/6-7-1",
+				"name": "告警转储策略",
+				"route_url": "/business/system/dump/alarm"
+			},
+			{
+				"id": "07-6",
+				"menuId": "07/7-7",
+				"name": "光纤及纤芯统计"
+			},
+			{
+				"id": "03-1-6",
+				"name": "配置策略",
+				"route_url": "/business/facility/facility-config"
+			},
+			{
+				"id": "03-6-9",
+				"name": "删除光缆段"
+			},
+			{
+				"id": "07-2-1",
+				"interfaceUrl": "/statistics/queryDeviceCount",
+				"menuId": "07/7-2/7-2-1",
+				"name": "设施数量统计",
+				"route_url": "/business/statistical-report/device-statistical"
+			},
+			{
+				"id": "07-5-2",
+				"menuId": "07/7-6/7-6-2",
+				"name": "柜间跳接关系统计",
+				"route_url": "/business/statistical-report/odn-jump/outer"
+			},
+			{
+				"id": "09-4-1-4",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "删除策略",
+				"route_url": ""
+			},
+			{
+				"id": "01-5-1-4",
+				"interfaceUrl": "/unifyauth/deleteUnifyAuthById,/unifyauth/batchDeleteUnifyAuth",
+				"name": "删除统一授权"
+			},
+			{
+				"id": "02-1-3",
+				"name": "当前告警定位"
+			},
+			{
+				"id": "04-7-5",
+				"menuId": "06/6-7/6-7-5",
+				"name": "销障工单转出策略",
+				"route_url": "/business/system/dump/clear-barrier"
+			},
+			{
+				"id": "04-7-3",
+				"menuId": "06/6-7/6-7-3",
+				"name": "设施日志转储策略",
+				"route_url": "/business/system/dump/facility-log"
+			},
+			{
+				"id": "06-2-1-8",
+				"interfaceUrl": "/alarmExperience/queryExperienceInfo",
+				"menuId": "",
+				"name": "运维建议",
+				"route_url": ""
+			},
+			{
+				"id": "04-3-2",
+				"menuId": "06/6-3/6-3-2",
+				"name": "HTTP服务配置",
+				"route_url": "/business/system/agreement/config/http-serve"
+			},
+			{
+				"id": "02-3-5-1",
+				"interfaceUrl": "/alarmOrderRule/addAlarmOrderRule",
+				"name": "新增告警转工单",
+				"route_url": "/business/alarm/alarm-work-order/add"
+			},
+			{
+				"id": "04-7-2",
+				"menuId": "06/6-7/6-7-2",
+				"name": "系统日志转储策略",
+				"route_url": "/business/system/dump/system-log"
+			},
+			{
+				"id": "06-1-3-4",
+				"interfaceUrl": "/inspectionOrder/regenerateInspectionProc",
+				"menuId": "",
+				"name": "重新生成",
+				"route_url": "/business/work-order/inspection/unfinished-detail/restUpdate"
+			},
+			{
+				"id": "14-1-4",
+				"interfaceUrl": "/trouble/assignTrouble",
+				"menuId": "",
+				"name": "故障指派",
+				"route_url": "/business/trouble/trouble-list/trouble-assign"
+			},
+			{
+				"id": "04-3-1-1",
+				"interfaceUrl": "/deviceProtocol/addDeviceProtocol,/deviceProtocol/queryFileLimit",
+				"name": "新增设施协议"
+			},
+			{
+				"id": "01-2-1",
+				"interfaceUrl": "/department/insert",
+				"name": "添加单位",
+				"route_url": "/business/user/unit-detail/add"
+			},
+			{
+				"id": "07-8-4",
+				"interfaceUrl": "/statistics/queryUnlockingTopNum",
+				"menuId": "07/7-8/7-8-4",
+				"name": "传感器值统计",
+				"route_url": "/business/statistical-report/top-sensor"
+			},
+			{
+				"id": "07-6-3",
+				"menuId": "07/7-7/7-7-3",
+				"name": "纤芯统计",
+				"route_url": "/business/statistical-report/core-fiber"
+			},
+			{
+				"id": "03-9",
+				"menuId": "02/02-10",
+				"name": "分组管理",
+				"route_url": "/business/facility/group-list"
+			},
+			{
+				"id": "03-2-6",
+				"interfaceUrl": "/areaInfo/setAreaDevice",
+				"name": "关联设施",
+				"route_url": "/business/facility/set-area-device"
+			},
+			{
+				"id": "02-3-1-2-2",
+				"interfaceUrl": "/alarmSet/updateAlarmLevel              ",
+				"name": "修改告警级别设置"
+			},
+			{
+				"id": "03-10-1",
+				"name": "新增回路",
+				"route_url": "/business/facility/loop-detail/add"
+			},
+			{
+				"id": "01-3-2",
+				"interfaceUrl": "/role/update,/role/queryRoleInfoById/",
+				"name": "修改角色",
+				"route_url": "/business/user/role-detail/update"
+			},
+			{
+				"id": "04-5-5",
+				"interfaceUrl": "/systemParam/queryParam/8",
+				"menuId": "06/6-5/6-5-5",
+				"name": "推送服务设置",
+				"route_url": "/business/system/system-parameter/push"
+			},
+			{
+				"id": "09-2-2",
+				"interfaceUrl": "",
+				"menuId": "09-2-2",
+				"name": "设备列表",
+				"route_url": "/business/application/release/equipment-list"
+			},
+			{
+				"id": "02-3-3-4-1",
+				"interfaceUrl": "/alarmFilterRule/updateAlarmFilterRule",
+				"name": "修改告警过滤",
+				"route_url": "/business/alarm/alarm-filtration/update"
+			},
+			{
+				"id": "05-2",
+				"interfaceUrl": "business/index",
+				"menuId": "05-2",
+				"name": "设备控制",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-1-1-1",
+				"interfaceUrl": "/inspectionOrder/regenerateInspectionProc",
+				"menuId": "",
+				"name": "重新生成巡检工单",
+				"route_url": "/business/work-order/inspection/unfinished-detail/restUpdate"
+			},
+			{
+				"id": "03-8-2",
+				"name": "编辑设备",
+				"route_url": "/business/facility/equipment-detail/update"
+			},
+			{
+				"id": "06-1",
+				"interfaceUrl": "",
+				"menuId": "03-1",
+				"name": "巡检工单",
+				"route_url": ""
+			},
+			{
+				"id": "04-1-1",
+				"interfaceUrl": "/menu/queryListMenuTemplateByPage",
+				"menuId": "06/6-1",
+				"name": "菜单列表",
+				"route_url": "/business/system/menu"
+			},
+			{
+				"id": "02-1-2",
+				"interfaceUrl": "/alarmCurrent/updateAlarmCleanStatus",
+				"name": "告警清除"
+			},
+			{
+				"id": "03-6-5",
+				"name": "纤芯熔接",
+				"route_url": "/business/facility/view-cable/core-fusion"
+			},
+			{
+				"id": "09-3-2",
+				"interfaceUrl": "",
+				"menuId": "09-3-2",
+				"name": "设备列表",
+				"route_url": "/business/application/security/equipment-list"
+			},
+			{
+				"id": "02-3-3-1",
+				"interfaceUrl": "/alarmFilterRule/addAlarmFilterRule",
+				"name": "新增告警过滤",
+				"route_url": "/business/alarm/alarm-filtration/add"
+			},
+			{
+				"id": "09-3",
+				"interfaceUrl": "",
+				"menuId": "09-3",
+				"name": "智能安防",
+				"route_url": "/business/application/security"
+			},
+			{
+				"id": "07-2-2",
+				"interfaceUrl": "/statistics/queryDeviceStatusCount",
+				"menuId": "07/7-2/7-2-2",
+				"name": "设施状态统计",
+				"route_url": "/business/statistical-report/device-status"
+			},
+			{
+				"id": "07-3-1",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByDeviceType",
+				"menuId": "07/7-4/7-4-1",
+				"name": "销障工单设施类型统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/device-type"
+			},
+			{
+				"id": "03-9-1",
+				"name": "新增分组",
+				"route_url": "/business/facility/group-detail/add"
+			},
+			{
+				"id": "09-4-1-5",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "启用",
+				"route_url": ""
+			},
+			{
+				"id": "06-1-2-3",
+				"interfaceUrl": "/inspectionOrder/queryListInspectionTaskRelationProcByPage",
+				"menuId": "",
+				"name": "关联工单",
+				"route_url": ""
+			},
+			{
+				"id": "02-3-4-5",
+				"interfaceUrl": "/alarmForwardRule/batchDeleteAlarmForwardRule",
+				"name": "删除告警通知"
+			},
+			{
+				"id": "07-8-3",
+				"interfaceUrl": "/procStatistical/queryTopListDeviceCountGroupByDevice",
+				"menuId": "07/7-8/7-8-3",
+				"name": "销障工单次数统计",
+				"route_url": "/business/statistical-report/top-work-order"
+			},
+			{
+				"id": "01-5-1-7",
+				"name": "查看统一授权范围"
+			},
+			{
+				"id": "02-3-4-1",
+				"interfaceUrl": "/alarmForwardRule/addAlarmForwardRule",
+				"name": "新增告警远程通知",
+				"route_url": "/business/alarm/alarm-remote-notification/add"
+			},
+			{
+				"id": "06-3-4",
+				"interfaceUrl": "/inspectionTemplate/insertTemplate",
+				"menuId": "",
+				"name": "新增",
+				"route_url": "/business/work-order/inspection-template/template-detail/add"
+			},
+			{
+				"id": "04-4-1-4",
+				"interfaceUrl": "/ipRange/updateRangeStatus,/ipRange/updateAllRangesStatus",
+				"name": "启用/禁用访问控制列表"
+			},
+			{
+				"id": "02-3-5-2",
+				"interfaceUrl": "/alarmOrderRule/batchUpdateAlarmOrderRuleStatus",
+				"name": "启用告警转工单"
+			},
+			{
+				"id": "07-4-2",
+				"menuId": "07/7-3/7-3-2",
+				"name": "熔纤侧端口统计",
+				"route_url": "/business/statistical-report/odn-fused-fiber"
+			},
+			{
+				"id": "04-5-5-1",
+				"interfaceUrl": "/systemParameter/updateMobilePush",
+				"name": "修改推送服务设置"
+			},
+			{
+				"id": "04-5-3-1",
+				"interfaceUrl": "/systemParameter/updateMail,/systemParameter/sendMailTest",
+				"name": "修改邮件服务器设置"
+			},
+			{
+				"id": "02-3-3-2",
+				"interfaceUrl": "/alarmFilterRule/batchUpdateAlarmFilterRuleStatus",
+				"name": "启用告警过滤"
+			},
+			{
+				"id": "06-1-1-1",
+				"interfaceUrl": "/inspectionOrder/insertInspectionProc",
+				"menuId": "",
+				"name": "新增巡检工单",
+				"route_url": "/business/work-order/inspection/unfinished-detail/add"
+			},
+			{
+				"id": "03-4-1-3",
+				"interfaceUrl": "/partInfo/deletePartByIds",
+				"name": "删除配件"
+			},
+			{
+				"id": "09-4-1-2",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "新增策略",
+				"route_url": "/business/application/strategy/add"
+			},
+			{
+				"id": "03-8-3",
+				"name": "查看详情",
+				"route_url": "/business/facility/equipment-view-detail"
+			},
+			{
+				"id": "03-6-4",
+				"name": "查看纤芯熔接",
+				"route_url": "/business/facility/view-cable/core-fusion"
+			},
+			{
+				"id": "06-2-1-7",
+				"interfaceUrl": "/repairOperate/getClearFailureByIdForProcess",
+				"menuId": "",
+				"name": "未完工销障工单详情",
+				"route_url": "/business/work-order/clear-barrier/unfinished-detail/view"
+			},
+			{
+				"id": "02-2-2",
+				"name": "历史告警定位"
+			},
+			{
+				"id": "07",
+				"menuId": "07",
+				"name": "统计管理"
+			},
+			{
+				"id": "06-1-3-3",
+				"interfaceUrl": "/inspectionOrder/getInspectionProcByIdForComplete",
+				"menuId": "",
+				"name": "详情",
+				"route_url": "/business/work-order/inspection/unfinished-detail/finishedView"
+			},
+			{
+				"id": "07-5",
+				"menuId": "07/7-6",
+				"name": "ODN设施跳接关系统计"
+			},
+			{
+				"id": "03-1-5-4",
+				"name": "查看设施",
+				"route_url": "/business/facility/view-facility-picture"
+			},
+			{
+				"id": "06-1-1-5",
+				"interfaceUrl": "/inspectionOperate/assignProc",
+				"menuId": "",
+				"name": "指派",
+				"route_url": ""
+			},
+			{
+				"id": "02-3-4",
+				"interfaceUrl": "/alarmForwardRule/queryAlarmForwardRuleList",
+				"menuId": "05/5-3/5-3-4",
+				"name": "告警远程通知列表",
+				"route_url": "/business/alarm/alarm-remote-notification"
+			},
+			{
+				"id": "04-4-2",
+				"interfaceUrl": "/systemParam/queryParam/0",
+				"menuId": "06/6-4/6-4-2",
+				"name": "账号安全策略",
+				"route_url": "/business/system/security-policy/account"
+			},
+			{
+				"id": "03-1-5-1",
+				"name": "纤芯成端"
+			},
+			{
+				"id": "04-2-3",
+				"interfaceUrl": "/log/findSecurityLog",
+				"menuId": "06/6-2/6-2-3",
+				"name": "安全日志",
+				"route_url": "/business/system/log/security"
+			},
+			{
+				"id": "07-1",
+				"menuId": "07/7-1",
+				"name": "告警统计"
+			},
+			{
+				"id": "14-1-6",
+				"interfaceUrl": "/trouble/queryTroubleById",
+				"menuId": "",
+				"name": "故障详情",
+				"route_url": "/business/trouble/trouble-list/trouble-detail"
+			},
+			{
+				"id": "03-10-2",
+				"name": "编辑回路",
+				"route_url": "/business/facility/loop-detail/update"
+			},
+			{
+				"id": "06-1-1-2",
+				"interfaceUrl": "/inspectionOrder/updateInspectionProc",
+				"menuId": "",
+				"name": "编辑巡检工单",
+				"route_url": "/business/work-order/inspection/unfinished-detail/update"
+			},
+			{
+				"id": "14-1-2",
+				"interfaceUrl": "/trouble/updateTroubleById",
+				"menuId": "",
+				"name": "故障编辑",
+				"route_url": "/business/trouble/trouble-list/update"
+			},
+			{
+				"id": "07-3-5",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByAreaPercent",
+				"menuId": "07/7-4/7-4-5",
+				"name": "销障工单比统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/percent"
+			},
+			{
+				"id": "01",
+				"name": "用户管理"
+			},
+			{
+				"id": "02-3",
+				"menuId": "05/5-3",
+				"name": "告警设置"
+			},
+			{
+				"id": "04-4-3-1",
+				"interfaceUrl": "/securityStrategy/updatePasswordStrategy",
+				"name": "修改密码安全策略"
+			},
+			{
+				"id": "06-1-1-9",
+				"interfaceUrl": "/inspectionOrder/queryInspectionCheckList",
+				"menuId": "",
+				"name": "巡检报告",
+				"route_url": "/business/work-order/inspection/finished-detail/finished-inspectReport"
+			},
+			{
+				"id": "04-4-1",
+				"interfaceUrl": "/ipRange/queryRanges",
+				"menuId": "06/6-4/6-4-1",
+				"name": "访问控制列表",
+				"route_url": "/business/system/security-policy/access-control"
+			},
+			{
+				"id": "03-1-13",
+				"name": "设施定位"
+			},
+			{
+				"id": "03-4-1-2",
+				"interfaceUrl": "/partInfo/updatePartById",
+				"name": "修改配件",
+				"route_url": "/business/facility/parts-detail/update"
+			},
+			{
+				"id": "03-1-2",
+				"interfaceUrl": "/deviceInfo/addDevice",
+				"name": "新增设施",
+				"route_url": "/business/facility/facility-detail/add"
+			},
+			{
+				"id": "03-4",
+				"menuId": "02/02-3",
+				"name": "配件管理",
+				"route_url": "/business/facility/facility-parts"
+			},
+			{
+				"id": "04-5-4-1",
+				"interfaceUrl": "/systemParameter/updateMessage,/systemParameter/sendMessageTest",
+				"name": "修改短信服务器设置"
+			},
+			{
+				"id": "04-5-1",
+				"interfaceUrl": "/systemParam/queryParam/9",
+				"menuId": "06/6-5/6-5-1",
+				"name": "显示设置",
+				"route_url": "/business/system/system-parameter/show"
+			},
+			{
+				"id": "03-1-14",
+				"name": "设施布防"
+			},
+			{
+				"id": "03-8",
+				"menuId": "02/02-9",
+				"name": "设备管理",
+				"route_url": "/business/facility/equipment-list"
+			},
+			{
+				"id": "06-2-1-1-1",
+				"interfaceUrl": "",
+				"menuId": "",
+				"name": "重新生成销障工单",
+				"route_url": "/business/work-order/clear-barrier/unfinished-detail/rebuild"
+			},
+			{
+				"id": "02-3-1-1-1",
+				"interfaceUrl": "/alarmSet/queryAlarmLevelList",
+				"name": "告警级别设置列表",
+				"route_url": "/business/alarm/alarm-level-set"
+			},
+			{
+				"id": "09-4-1-1",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "策略详情",
+				"route_url": "/business/application/strategy/policy-details"
+			},
+			{
+				"id": "03-8-1",
+				"name": "新增设备",
+				"route_url": "/business/facility/equipment-detail/add"
+			},
+			{
+				"id": "03-9-3",
+				"name": "查看详情",
+				"route_url": "/business/facility/group-view-detail"
+			},
+			{
+				"id": "14",
+				"interfaceUrl": "",
+				"menuId": "10",
+				"name": "故障管理",
+				"route_url": ""
+			},
+			{
+				"id": "10",
+				"name": "移动终端操作"
+			},
+			{
+				"id": "03-3-3",
+				"name": "下载图片"
+			},
+			{
+				"id": "12-6",
+				"name": "标签信息修改"
+			},
+			{
+				"id": "12-3",
+				"name": "成端直熔信息管理"
+			},
+			{
+				"id": "01-3",
+				"interfaceUrl": "/role/queryRoleByField",
+				"menuId": "04/4-3",
+				"name": "角色列表",
+				"route_url": "/business/user/role-list"
+			},
+			{
+				"id": "07-1-1",
+				"menuId": "07/7-1/7-1-1",
+				"name": "告警类型统计",
+				"route_url": "/business/statistical-report/alarm-statistical/alarm-type"
+			},
+			{
+				"id": "09-2-3-6",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "编辑策略",
+				"route_url": "/business/application/release/policy-control/update"
+			},
+			{
+				"id": "06-1-1",
+				"interfaceUrl": "/inspectionOrder/queryListInspectionProcessByPage",
+				"menuId": "03-1-1",
+				"name": "未完工巡检工单列表",
+				"route_url": "/business/work-order/inspection/unfinished-list"
+			},
+			{
+				"id": "03-6-2",
+				"name": "修改光缆",
+				"route_url": "/business/facility/view-cable-detail/update"
+			},
+			{
+				"id": "09-2-3-4",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "启用",
+				"route_url": ""
+			},
+			{
+				"id": "01-2",
+				"interfaceUrl": "/department/queryDepartmentList",
+				"menuId": "04/4-2",
+				"name": "单位列表",
+				"route_url": "/business/user/unit-list"
+			},
+			{
+				"id": "07-8",
+				"menuId": "07/7-8",
+				"name": "TopN"
+			},
+			{
+				"id": "04-2-2",
+				"interfaceUrl": "/log/findSystemLog",
+				"menuId": "06/6-2/6-2-2",
+				"name": "系统日志",
+				"route_url": "/business/system/log/system"
+			},
+			{
+				"id": "06-2",
+				"interfaceUrl": "",
+				"menuId": "03-2",
+				"name": "销障工单",
+				"route_url": ""
+			},
+			{
+				"id": "07-4-4",
+				"menuId": "07/7-3/7-3-4",
+				"name": "框统计",
+				"route_url": "/business/statistical-report/odn-box"
+			},
+			{
+				"id": "09-1",
+				"interfaceUrl": "",
+				"menuId": "09-1",
+				"name": "智慧照明",
+				"route_url": "/business/application/lighting"
+			},
+			{
+				"id": "04-6-1",
+				"name": "上传License"
+			},
+			{
+				"id": "07-3-11",
+				"interfaceUrl": "/procStatistical/queryProcAddListCountGroupByDay",
+				"menuId": "07/7-4/7-4-11",
+				"name": "巡检工单增量统计",
+				"route_url": "/business/statistical-report/work-order-statistical/inspection/increment"
+			},
+			{
+				"id": "04-5-3",
+				"interfaceUrl": "/systemParam/queryParam/6",
+				"menuId": "06/6-5/6-5-3",
+				"name": "邮件服务器设置",
+				"route_url": "/business/system/system-parameter/email"
+			},
+			{
+				"id": "03-4-1-1",
+				"interfaceUrl": "/partInfo/addPart",
+				"name": "新增配件",
+				"route_url": "/business/facility/parts-detail/add"
+			},
+			{
+				"id": "04-4-1-1",
+				"interfaceUrl": "/ipRange/addIpRange",
+				"name": "新增访问控制列表"
+			},
+			{
+				"id": "06-1-3-1",
+				"interfaceUrl": "/inspectionOrder/queryInspectionCheckList",
+				"menuId": "",
+				"name": "巡检报告",
+				"route_url": "/business/work-order/inspection/finished-detail/finished-inspectReport"
+			},
+			{
+				"id": "04-2",
+				"name": "日志管理"
+			},
+			{
+				"id": "02-1-5",
+				"name": "当前告警查看图片"
+			},
+			{
+				"id": "01-1-2",
+				"interfaceUrl": "/user/update,/user/queryUserInfoById/",
+				"name": "修改用户",
+				"route_url": "/business/user/modify-user/update"
+			},
+			{
+				"id": "09-4-1-3",
+				"interfaceUrl": "",
+				"menuId": "09-4-1",
+				"name": "编辑策略",
+				"route_url": "/business/application/strategy/policy-control/update"
+			},
+			{
+				"id": "02-3-3-5",
+				"interfaceUrl": "/alarmFilterRule/batchDeleteAlarmFilterRule",
+				"name": "删除告警过滤"
+			},
+			{
+				"id": "11-10",
+				"name": "主控重置"
+			},
+			{
+				"id": "01-3-1",
+				"interfaceUrl": "/role/insert",
+				"name": "添加角色",
+				"route_url": "/business/user/role-detail/add"
+			},
+			{
+				"id": "01-3-4",
+				"interfaceUrl": "/role/deleteByIds",
+				"name": "查看角色权集"
+			},
+			{
+				"id": "04-1",
+				"interfaceUrl": "/menu",
+				"name": "菜单管理",
+				"route_url": "/business/system/menu"
+			},
+			{
+				"id": "01-2-3",
+				"interfaceUrl": "/department/deleteByIds",
+				"name": "删除单位"
+			},
+			{
+				"id": "01-1-8",
+				"name": "流水查询"
+			},
+			{
+				"id": "03-1",
+				"interfaceUrl": "/deviceInfo/deviceListByPage",
+				"menuId": "02/02-1",
+				"name": "设施列表",
+				"route_url": "/business/facility/facility-list"
+			},
+			{
+				"id": "07-3-12",
+				"interfaceUrl": "/procStatistical/queryDeptListGroupByAccountabilityDept",
+				"menuId": "07/7-4/7-4-12",
+				"name": "巡检工单责任单位统计",
+				"route_url": "/business/statistical-report/work-order-statistical/inspection/unit"
+			},
+			{
+				"id": "09-1-3-6",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "禁用",
+				"route_url": ""
+			},
+			{
+				"id": "04-3-4",
+				"menuId": "06/6-3/6-3-4",
+				"name": "Webservice服务配置",
+				"route_url": "/business/system/agreement/config/webservice-serve"
+			},
+			{
+				"id": "01-1-1",
+				"interfaceUrl": "/user/insert,/user/verifyUserInfo",
+				"name": "添加用户",
+				"route_url": "/business/user/add-user/add"
+			},
+			{
+				"id": "04-3-1",
+				"interfaceUrl": "/deviceProtocol/queryDeviceProtocolList",
+				"menuId": "06/6-3/6-3-1",
+				"name": "设施协议",
+				"route_url": "/business/system/agreement/facility"
+			},
+			{
+				"id": "02-3-4-4-1",
+				"interfaceUrl": "/alarmForwardRule/updateAlarmForwardRule     ",
+				"name": "修改告警远程通知",
+				"route_url": "/business/alarm/alarm-remote-notification/update"
+			},
+			{
+				"id": "03-4-1",
+				"interfaceUrl": "/partInfo/partListByPage",
+				"name": "配件列表"
+			},
+			{
+				"id": "01-1-3",
+				"interfaceUrl": "/user/deleteByIds",
+				"name": "删除用户"
+			},
+			{
+				"id": "11-11",
+				"name": "开锁"
+			},
+			{
+				"id": "04-7-4",
+				"menuId": "06/6-7/6-7-4",
+				"name": "巡检工单转储策略",
+				"route_url": "/business/system/dump/inspection"
+			},
+			{
+				"id": "11-2",
+				"name": "巡检工单"
+			},
+			{
+				"id": "07-6-1",
+				"menuId": "07/7-7/7-7-1",
+				"name": "光缆统计",
+				"route_url": "/business/statistical-report/optical-cable"
+			},
+			{
+				"id": "04-1-2",
+				"interfaceUrl": "/menu/openMenuTemplate",
+				"name": "启用菜单模板"
+			},
+			{
+				"id": "01-1-4",
+				"interfaceUrl": "/user/resetPWD",
+				"name": "重置用户密码"
+			},
+			{
+				"id": "05",
+				"interfaceUrl": "/deviceInfo/queryDeviceAreaList,/areaInfo/queryAreaListAll,/deviceMapConfig/queryDeviceConfigAll,/deviceMapConfig/updateDeviceTypeStatusAll,/deviceMapConfig/updateDeviceIconSize",
+				"menuId": "01",
+				"name": "首页",
+				"route_url": "/business/index"
+			},
+			{
+				"id": "09-1-3-3",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "编辑策略",
+				"route_url": "/business/application/lighting/policy-control/update"
+			},
+			{
+				"id": "03-1-4",
+				"interfaceUrl": "/deviceInfo/deleteDeviceByIds",
+				"name": "删除设施"
+			},
+			{
+				"id": "04-4-2-1",
+				"interfaceUrl": "/securityStrategy/updateAccountStrategy",
+				"name": "修改账号安全策略"
+			},
+			{
+				"id": "03-6-8",
+				"name": "调整光缆段坐标",
+				"route_url": "/business/facility/view-cable"
+			},
+			{
+				"id": "07-1-4",
+				"menuId": "07/7-1/7-1-4",
+				"name": "区域告警比统计",
+				"route_url": "/business/statistical-report/alarm-statistical/area-alarm"
+			},
+			{
+				"id": "04-1-5",
+				"interfaceUrl": "/menu/deleteMenuTemplate",
+				"name": "删除菜单配置模板"
+			},
+			{
+				"id": "01-1-7",
+				"name": "用户模板下载"
+			},
+			{
+				"id": "04-2-1",
+				"interfaceUrl": "/log/findOperateLog",
+				"menuId": "06/6-2/6-2-1",
+				"name": "操作日志",
+				"route_url": "/business/system/log"
+			},
+			{
+				"id": "01-5-2-4",
+				"interfaceUrl": "/tempauth/deleteTempAuthById,/tempauth/batchDeleteTempAuth",
+				"name": "删除临时授权"
+			},
+			{
+				"id": "09-1-3-5",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "启用",
+				"route_url": ""
+			},
+			{
+				"id": "06-3-2",
+				"interfaceUrl": "/inspectionTemplate/updateInspectionTemplate",
+				"menuId": "",
+				"name": "编辑",
+				"route_url": "/business/work-order/inspection-template/template-detail/update"
+			},
+			{
+				"id": "03",
+				"name": "资产管理"
+			},
+			{
+				"id": "03-5",
+				"menuId": "02/02-2",
+				"name": "设施日志",
+				"route_url": "/business/facility/facility-log"
+			},
+			{
+				"id": "04-4-1-3",
+				"interfaceUrl": "/ipRange/deleteRanges",
+				"name": "删除访问控制列表"
+			},
+			{
+				"id": "06-2-1-2",
+				"interfaceUrl": "/repairOrder/updateClearFailureByProcId",
+				"menuId": "",
+				"name": "编辑",
+				"route_url": "/business/work-order/clear-barrier/unfinished-detail/update"
+			},
+			{
+				"id": "04-3-3-1",
+				"name": "修改HTTPS服务配置"
+			},
+			{
+				"id": "14-1",
+				"interfaceUrl": "/trouble/troubleListByPage",
+				"menuId": "10-1",
+				"name": "故障列表",
+				"route_url": "/business/trouble/trouble-list"
+			},
+			{
+				"id": "04-5-4",
+				"interfaceUrl": "/systemParam/queryParam/5",
+				"menuId": "06/6-5/6-5-4",
+				"name": "短信服务器设置",
+				"route_url": "/business/system/system-parameter/note"
+			},
+			{
+				"id": "09-2",
+				"interfaceUrl": "",
+				"menuId": "09-2",
+				"name": "信息发布",
+				"route_url": "/business/application/release"
+			},
+			{
+				"id": "06-2-1-3",
+				"interfaceUrl": "/repairOperate/revokeProc",
+				"menuId": "",
+				"name": "撤回",
+				"route_url": ""
+			},
+			{
+				"id": "14-1-5",
+				"interfaceUrl": "/trouble/updateTroubleRemark",
+				"menuId": "",
+				"name": "故障备注",
+				"route_url": ""
+			},
+			{
+				"id": "02-3-4-2",
+				"interfaceUrl": "/alarmForwardRule/batchUpdateAlarmForwardRuleStatus",
+				"name": "启用告警远程通知"
+			},
+			{
+				"id": "07-4-1",
+				"menuId": "07/7-3/7-3-1",
+				"name": "跳纤侧端口统计\r\n",
+				"route_url": "/business/statistical-report/odn-jump-fiber"
+			},
+			{
+				"id": "07-1-3",
+				"menuId": "07/7-1/7-1-3",
+				"name": "告警名称统计",
+				"route_url": "/business/statistical-report/alarm-statistical/alarm-name"
+			},
+			{
+				"id": "01-5-2-2",
+				"interfaceUrl": "/tempauth/audingTempAuth,/tempauth/batchAudingTempAuthByIds",
+				"name": "审核临时授权"
+			},
+			{
+				"id": "06-3-3",
+				"interfaceUrl": "/inspectionTemplate/deleteInspectionTemplate",
+				"menuId": "",
+				"name": "删除",
+				"route_url": ""
+			},
+			{
+				"id": "01-5-1-2",
+				"interfaceUrl": "/unifyauth/addUnifyAuth",
+				"name": "添加统一授权",
+				"route_url": "/business/user/unified-details/add"
+			},
+			{
+				"id": "09-3-1",
+				"interfaceUrl": "",
+				"menuId": "09-3-1",
+				"name": "安防工作台",
+				"route_url": "/business/application/security/workbench"
+			},
+			{
+				"id": "04-5-1-1",
+				"interfaceUrl": "/systemParameter/updateDisplaySettings,/systemParameter/queryLanguageAll",
+				"name": "修改显示设置"
+			},
+			{
+				"id": "03-1-18",
+				"name": "设施拆除"
+			},
+			{
+				"id": "09-2-3-5",
+				"interfaceUrl": "",
+				"menuId": "09-2-3",
+				"name": "禁用",
+				"route_url": ""
+			},
+			{
+				"id": "04-3-1-3",
+				"interfaceUrl": "/deviceProtocol/deleteDeviceProtocol",
+				"name": "删除设施协议"
+			},
+			{
+				"id": "03-3",
+				"interfaceUrl": "/picRelationInfo/imageListByPage",
+				"menuId": "02/02-4",
+				"name": "图片管理",
+				"route_url": "/business/facility/photo-viewer"
+			},
+			{
+				"id": "02-3-1-1",
+				"interfaceUrl": "/alarmSet/updateAlarmCurrentSet    ",
+				"name": "修改当前告警设置"
+			},
+			{
+				"id": "12-7",
+				"name": "标签更换/解绑"
+			},
+			{
+				"id": "07-8-2",
+				"interfaceUrl": "/alarmStatistics/queryAlarmNameGroup",
+				"menuId": "07/7-8/7-8-2",
+				"name": "告警次数统计",
+				"route_url": "/business/statistical-report/top-alarm"
+			},
+			{
+				"id": "09-1-3-2",
+				"interfaceUrl": "",
+				"menuId": "09-1-3",
+				"name": "新增策略",
+				"route_url": "/business/application/lighting/policy-control/add"
+			},
+			{
+				"id": "02-3-1",
+				"interfaceUrl": "/alarmSet/queryAlarmNameList",
+				"menuId": "05/5-3/5-3-1",
+				"name": "当前告警设置列表",
+				"route_url": "/business/alarm/current-alarm-set"
+			},
+			{
+				"id": "07-2",
+				"name": "设施统计"
+			},
+			{
+				"id": "06-2-2",
+				"interfaceUrl": "/repairOperate/queryListHistoryClearFailureByPage",
+				"menuId": "03-2-2",
+				"name": "已完工销障工单列表",
+				"route_url": "/business/work-order/clear-barrier/history-list"
+			},
+			{
+				"id": "04-7",
+				"menuId": "06/6-7",
+				"name": "转储设置"
+			},
+			{
+				"id": "07-6-2",
+				"menuId": "07/7-7/7-7-2",
+				"name": "光缆段统计",
+				"route_url": "/business/statistical-report/cable-segment"
+			},
+			{
+				"id": "07-3-7",
+				"interfaceUrl": "/procStatistical/queryDeptListGroupByAccountabilityDept",
+				"menuId": "07/7-4/7-4-7",
+				"name": "销障工单责任单位统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/unit"
+			},
+			{
+				"id": "07-3-4",
+				"interfaceUrl": "/procStatistical/queryListProcGroupByErrorReason",
+				"menuId": "07/7-4/7-4-4",
+				"name": "销障工单故障原因统计",
+				"route_url": "/business/statistical-report/work-order-statistical/clear-barrier/failure"
+			},
+			{
+				"id": "04-4-1-2",
+				"interfaceUrl": "/ipRange/queryIpRangeById,/ipRange/updateIpRange",
+				"name": "修改访问控制列表"
+			},
+			{
+				"id": "01-3-3",
+				"interfaceUrl": "/role/deleteByIds",
+				"name": "删除角色"
+			},
+			{
+				"id": "06-2-2-1",
+				"interfaceUrl": "/picRelationInfo/getPicDetail",
+				"menuId": "",
+				"name": "查看图片",
+				"route_url": ""
+			},
+			{
+				"id": "01-1",
+				"interfaceUrl": "/user/queryUserList",
+				"menuId": "04/4-1",
+				"name": "用户列表",
+				"route_url": "/business/user/user-list"
+			},
+			{
+				"id": "14-1-3",
+				"interfaceUrl": "/trouble/deleteTroubleByIds",
+				"menuId": "",
+				"name": "故障删除",
+				"route_url": ""
+			},
+			{
+				"id": "03-1-5-5",
+				"name": "删除主控"
+			},
+			{
+				"id": "06-1-2",
+				"interfaceUrl": "/inspectionTask/queryListInspectionTaskByPage",
+				"menuId": "03-1-2",
+				"name": "巡检任务",
+				"route_url": "/business/work-order/inspection/task-list"
+			},
+			{
+				"id": "01-4",
+				"interfaceUrl": "/user/getOnLineUser",
+				"menuId": "04/4-4",
+				"name": "在线用户列表",
+				"route_url": "/business/user/online-list"
+			},
+			{
+				"id": "03-2-3",
+				"interfaceUrl": "/areaInfo/updateAreaById",
+				"name": "修改区域",
+				"route_url": "/business/facility/area-detail/update"
+			},
+			{
+				"id": "02",
+				"interfaceUrl": "/alarm",
+				"name": "告警模块"
+			}
+		],
+		"roleDeviceTypeDto": {
+			"deviceTypes": [
+				"D003",
+				"D002"
+			],
+			"equipmentTypes": [
+				"E005",
+				"E006",
+				"E007",
+				"E008",
+				"E009",
+				"E010",
+				"E011",
+				"E001",
+				"E002",
+				"E003",
+				"E004"
+			]
+		},
+		"roleDevicetypeList": [
+			{
+				"deviceTypeId": "D003",
+				"parentId": "0"
+			},
+			{
+				"deviceTypeId": "E004",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E003",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E010",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E009",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E008",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E002",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "D002",
+				"parentId": "0"
+			},
+			{
+				"deviceTypeId": "E006",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E007",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E001",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E005",
+				"parentId": "1"
+			},
+			{
+				"deviceTypeId": "E011",
+				"parentId": "1"
+			}
+		],
+		"roleName": "超级管理员"
+	},
+	"roleId": "superAdmin",
+	"userCode": "admin",
+	"userDesc": "",
+	"userName": "admin",
+	"userNickname": "admin",
+	"userStatus": "1"
+}
