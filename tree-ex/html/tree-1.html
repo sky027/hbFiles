@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tree-1</title>
+		<link rel="stylesheet" type="text/css" href="../zTreeStyle/zTreeStyle.css"/>
+		<script src="../js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.ztree.all.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="tree-1" class="ztree" style="height: 400px;width: 300px;"></div>
+		<script type="text/javascript">
+			var zTree;
+			var settings = {
+			    view: {
+			        showIcon: false, showLine: false
+			    },
+			    check: { 
+			    	enable: true, chkStyle: 'checkbox', 
+			    	chkboxType: {'Y': 's', 'N': 's'}
+			    },
+			    data: {
+			        simpleData: {
+			            enable: true,
+			            idKey: "areaId",
+				        pIdKey: "parentId",
+				        rootPId: ""
+			        },
+			        key: {
+						name: "areaName",
+						children: 'children'
+					}
+			    },
+			    callback: {
+			        beforeClick: function (treeId, treeNode) {
+			            var zTree = $.fn.zTree.getZTreeObj("tree-1");
+			            if (treeNode.isParent) {
+				            zTree.expandNode(treeNode);
+			        	}
+			        },
+			        onClick: nodeOnClick
+			    }   
+			};
+			var zNodes = []
+			var zTree = $.fn.zTree.getZTreeObj("tree-1");
+			function getTreeData() {
+				$.ajax({
+					type:"get",
+					url:"../js/json-tree.json",
+					success: function(res){
+						zNodes = loadData(res.data);
+						$.fn.zTree.init($("#tree-1"), settings, zNodes);
+					}
+				});
+			}
+			// 获取数据
+			getTreeData();
+			function loadData(list) {
+				for (var i = 0; i < list.length; i++) {
+					if (list[i].children.length > 0) {
+						loadData(list[i].children);
+					} else {
+						list[i].children = null;
+					}
+				}
+				return list;
+			}
+			function nodeOnClick(event, treeId, treeNode){
+				if (treeNode.open) {
+					alert(treeNode.areaName);
+				}
+			}
+		</script>
+	</body>
+</html>
