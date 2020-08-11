@@ -4,48 +4,45 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			.active-box{
+				width: 280px;height: 720px;
+				float: left;
+			}
+		</style>
 	</head>
 	<body>
-		<h2><button onclick="showFull()">进入全屏</button></h2>
-		<h2><button onclick="exitFull()">退出全屏</button></h2>
-		<h2><button onclick="checkData()">比较</button></h2>
-		<h2><button onclick="loadList()">递归组合</button></h2>
+		<div class="active-box">
+			<h2><button onclick="showFull()">进入全屏</button></h2>
+			<h2><button onclick="exitFull()">退出全屏</button></h2>
+			<h2><button onclick="checkData()">比较</button></h2>
+			<h2><button onclick="loadList()">递归组合</button></h2>
+			<h2><button onclick="loadData()">组合数据</button></h2>
+		</div>
+		<div class="active-box"></div>
+		<div class="active-box"></div>
+		<div class="active-box"></div>
+		<div class="active-box"></div>
 		<script type="text/javascript">
 			var size = 0;
 		
 			function showFull() {
 				var docElm = document.documentElement;
- 
 				//W3C 
-				 
 				if (docElm.requestFullscreen) { 
-				 
-				  docElm.requestFullscreen(); 
-				 
+				    docElm.requestFullscreen(); 
 				}
-				 
 				//FireFox 
-				 
 				else if (docElm.mozRequestFullScreen) { 
-				 
-				  docElm.mozRequestFullScreen(); 
-				 
+				    docElm.mozRequestFullScreen(); 
 				}
-				 
 				//Chrome等 
-				 
 				else if (docElm.webkitRequestFullScreen) { 
-				 
-				  docElm.webkitRequestFullScreen(); 
-				 
+				    docElm.webkitRequestFullScreen(); 
 				}
-				 
 				//IE11
-				 
 				else if (docElm.msRequestFullscreen) {
-				 
-				 docElm.msRequestFullscreen();
-				 
+				    docElm.msRequestFullscreen();
 				}
 			}
 			function exitFull() {
@@ -74,6 +71,7 @@
 					{id: '1', name: '1', pid: '0'},
 					{id: '2', name: '2', pid: '0'},
 					{id: '3', name: '3', pid: '0'},
+					{id: '4', name: '4', pid: '0'},
 					{id: '11', name: '11', pid: '1'},
 					{id: '12', name: '12', pid: '1'},
 					{id: '111', name: '111', pid: '11'},
@@ -145,6 +143,25 @@
 					arr.splice(indexInfo[i], 1);
 				}
 				return resultList;
+			}
+			
+			function loadData() {
+				var s1 = 'a,bb,c';
+				var s2 = '11,22,333';
+				
+				var arr1 = s1.split(',');
+				var arr2 = s2.split(',');
+				var newArr = [];
+				// newArr.splice(0, 1);
+				
+				if (arr1.length == arr2.length) {
+					for (var i=0; i<arr1.length; i++) {
+						var data = {};
+						data[arr1[i]] = arr2[i];
+						newArr.push(data);
+					}
+				}
+				console.log(newArr);
 			}
 			
 		</script>

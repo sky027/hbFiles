@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>jQuery数据加载进度条代码 - A5源码</title>
+
+<link href="bi-style.css" rel="stylesheet" />
+
+<script src="jquery.min.js"></script>
+<script src="jquery-barIndicator.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+
+<style>
+.bars{margin:20px 0}
+#bar2{height:100px}
+</style>
+</head>
+
+<body>
+ 
+<div id="main">
+	 
+	
+	<div class="demo">
+		<div class="bars">
+			<span id="bar">55</span>
+		</div>
+		<div class="bars">
+			<span id="bar2">75</span>
+		</div>
+		<div class="bars">
+			<span id="bar3">25</span>
+		</div>
+		<div class="bars">
+			<span id="bar4">45</span>
+			<p><button id="load">加载新数据</button> <button id="get">获取数据</button></p>
+		</div>
+	</div>
+</div>
+<script>
+ $('#bar').barIndicator({
+	counterStep:1,
+	milestones:false,
+	horBarHeight:20,
+	animTime:1000
+ });
+ $('#bar2').barIndicator({
+	style:'vertical',
+	milestones:false,
+	numType: 'absolute',
+	vertLabelAlign: 'top'
+ });
+ $('#bar3').barIndicator({
+	foreColor:'#e25a48',
+	backColor:'rgb(126,196,107)',
+	horTitle:'已完成'
+ });
+ $('#bar4').barIndicator({
+	colorRange:true,
+	horLabelPos: 'right'
+ });
+ $('#load').on('click', function() {
+	var newData = 85;
+	$('#bar4').barIndicator('loadNewData', [newData]);
+ });
+ $('#get').on('click', function() {
+	var data = $('#bar4').barIndicator('getPluginData');
+	alert(data.barLength);
+ });
+</script>
+<div style="text-align:center;">
+<p>来源:<a href="http://down.admin5.com/" target="_blank">A5源码</a></p>
+</div>
+
+
+</body>
+</html>
