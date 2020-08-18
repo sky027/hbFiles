@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			ul,li {list-style-type: none;}
+		</style>
+	</head>
+	<body>
+		<div id="paper"></div>
+		
+		<script type="text/javascript" charset="utf-8">
+			//模拟题目list 
+			var rows = [
+				{
+					reportCode: '1111', text: '题目11111', 
+					itemDetailList: [
+						{itemCode: '1111', listCode: 'an-1111', text: '选项-111111'},
+						{itemCode: '1111', listCode: 'an-2222', text: '选项-22222'},
+						{itemCode: '1111', listCode: 'an-3333', text: '选项-33333'},
+						{itemCode: '1111', listCode: 'an-4444', text: '选项-444444'},
+					]
+				},
+				{
+					reportCode: '2222', text: '题目12222', 
+					itemDetailList: [
+						{itemCode: '2222', listCode: 'an-1111', text: '选项-111111'},
+						{itemCode: '2222', listCode: 'an-2222', text: '选项-22222'},
+						{itemCode: '2222', listCode: 'an-3333', text: '选项-33333'},
+						{itemCode: '2222', listCode: 'an-4444', text: '选项-444444'},
+					]
+				},
+				{
+					reportCode: '3333', text: '题目3333', 
+					itemDetailList: [
+						{itemCode: '3333', listCode: 'an-1111', text: '选项-111111'},
+						{itemCode: '3333', listCode: 'an-2222', text: '选项-22222'},
+						{itemCode: '3333', listCode: 'an-3333', text: '选项-33333'},
+						{itemCode: '3333', listCode: 'an-4444', text: '选项-444444'},
+					]
+				},
+			];
+			// 模拟答案list
+			var answers = [
+				{reportCode: '1111', listCode: 'an-2222'},
+				{reportCode: '2222', listCode: 'an-4444'},
+				{reportCode: '3333', listCode: 'an-1111'},
+			];
+			// 生成题目及选项
+			for (var i = 0; i < rows.length; i++) {
+				var html = '<ul class="answerUL" value="'+ rows[i].reportCode +'">';
+				html += '<span>'+ (i+1) + '、' +rows[i].text +'</span>';
+				for (var k = 0; k < rows[i].itemDetailList.length; k++) {
+					var item = rows[i].itemDetailList[k];
+					html += '<li><input class="answerLI" type="radio" name="an-'+ item.itemCode +'" value="'+ item.listCode +'" pid="'+ item.itemCode +'" />'+ item.text +'</li>'
+				}
+				html += '</ul>';
+				$("#paper").append(html);
+			}
+			//匹配选项
+			var options = $(".answerLI");
+			for (var i=0; i<options.length; i++) {
+				var val = $(options[i]).val();
+				var pid = $(options[i]).attr('pid');
+				for (var j = 0; j < answers.length; j++) {
+					if (pid == answers[j].reportCode && val == answers[j].listCode) {
+						$(options[i]).prop('checked', true);
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
