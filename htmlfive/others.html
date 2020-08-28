@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1{
+				width: 200px;
+				height: 200px;
+				background: #0000FF;
+				float: left;
+			}
+			.div2{
+				width: 200px;
+				height: 200px;
+				background: #00C851;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		
+		<script type="text/javascript">
+			var arr2 = [
+			    {lable: '配电箱', code: 'D003'},
+			    {lable: '配电箱2', code: 'D004'},
+			    {lable: '配电箱3', code: 'D005'},
+			    {lable: '配电箱5', code: 'D007'},
+			];
+			var arr3 = [
+			    {lable: '智慧杆', code: 'D002'},
+			    {lable: '配电箱', code: 'D003'},
+			    {lable: '配电箱2', code: 'D004'},
+			    {lable: '配电箱3', code: 'D005'},
+			    {lable: '配电箱4', code: 'D006'},
+			];
+			
+			var arr = arr2.concat(arr3);
+			var arr4 = [];
+			arr.forEach(v => {
+				var obj = arr4.find(item => {
+					return item.code == v.code;
+				})
+				if (!obj) {
+					arr4.push(v);
+				}
+			});
+			console.log(arr4);
+			
+			for (var i = 0; i < arr2.length; i++) {
+				var obj = arr3.find(v => {
+					return v.code == arr2[i].code;
+				});
+				if (!obj) {
+					arr3[i].disabled = true; 
+				}
+			}
+			console.log(arr3);
+		</script>
+	</body>
+</html>
