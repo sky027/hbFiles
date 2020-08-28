@@ -1,9 +1,15 @@
 $(document).ready(function () {
     var style = document.styleSheets[0];
-
+	var h = window.innerHeight;
+	var w = window.innerWidth;
+	$(".over").width(w);
+	$("body").width(w)
+    $(".over").height(h);
+    $("body").height(h)
 
     type=config.language_type;
     space=getSpace(12,type);
+    
     $(".main-content .month").css("left",space.month+'px');
     $(".main-content .day").css("left",space.day+'px');
     $(".main-content .week").css("left",space.week+'px');

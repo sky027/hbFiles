@@ -1,7 +1,7 @@
 var config={
 
     'language_type':2,
-    'font_color':'#7F7F7F',
+    'font_color':'#fff',
     'pointer_color':'#000000',
 
     /*'sound':0,
