@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../myjs/largeData.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>名称</th><th>状态</th>
+					<th>时间</th><th>来源</th>
+					<th>关联</th><th>设施类型</th>
+					<th>设施名称</th><th>设施区域</th>
+					<th>设备名称</th><th>设备类型</th>
+					<th>单位</th><th>责任人</th>
+				</tr>
+			</thead>
+			<tbody id="tbody"></tbody>
+		</table>
+		<script type="text/javascript">
+			var result = loadData(60000);
+			console.log(result);
+			var list = result.data;
+			var dom = $('#tbody');
+			for (var i = 0; i < list.length; i++) {
+				var item = list[i];
+				var html = '<tr>'
+					+ '<td>'+ (i + 1) +'</td>'
+					+ '<td>'+ item.title +'</td>'
+					+ '<td>'+ item.status +'</td>'
+					+ '<td>'+ item.realityCompletedTime +'</td>'
+					+ '<td>'+ item.refAlarm +'</td>'
+					+ '<td>'+ item.refAlarmName +'</td>'
+					+ '<td>'+ item.deviceType +'</td>'
+					+ '<td>'+ item.deviceName +'</td>'
+					+ '<td>'+ item.deviceAreaName +'</td>'
+					+ '<td>'+ item.equipmentName +'</td>'
+					+ '<td>'+ item.equipmentType +'</td>'
+					+ '<td>'+ item.accountabilityDeptName +'</td>'
+					+ '<td>'+ item.assignName +'</td>'
+					+ '</tr>';
+				dom.append(html);
+			}
+		</script>
+	</body>
+</html>

@@ -31,8 +31,10 @@
 			<button class="btn fncuid" key="3">第三种</button>
 			<button class="btn fncuid" key="4">第四种</button>
 			<button class="btn fncuid" key="5">第五种</button>
+			<button class="btnc fncuid" key="6">中文字</button>
 		</div>
 		<h3>结果：<span class="labname"></span> &nbsp;&nbsp;<span class="text"></span></h3>
+		<div class="resz"></div>
 		<script type="text/javascript">
 			function fncUuid_1() {
 				var s = [];
@@ -125,6 +127,50 @@
 						text = fncUuid_5();
 						break;
 				}
+				$(".text").text(text);
+			});
+		</script>
+		<script type="text/javascript">
+			// 获取指定范围内的随机数
+			function randomAccess(min,max){
+				return Math.floor(Math.random() * (min - max) + max)
+			}
+			
+			// 解码
+			function decodeUnicode(str) {
+			   //Unicode显示方式是\u4e00
+			   str = "\\u"+str
+			   str = str.replace(/\\/g, "%");
+			    //转换中文
+			   str = unescape(str);
+			    //将其他受影响的转换回原来
+			   str = str.replace(/%/g, "\\");
+			   return str;
+			}
+			
+			/*
+			*@param Number NameLength 要获取的名字长度
+			*/
+			function getRandomName(NameLength){
+				let name = ""
+				for(let i = 0;i<NameLength;i++){
+					let unicodeNum  = ""
+					unicodeNum = randomAccess(0x4e00,0x9fa5).toString(16)
+					name += decodeUnicode(unicodeNum)
+				}
+				return name
+			}
+			var t = '';
+			for (var i = 0; i < 5000; i++) {
+				var s = getRandomName(1);
+				if (t.indexOf(s) == -1) {
+					t += s;
+				}
+			}
+			$(".resz").text(t.length + t);
+			$(".btnc").click(function(){
+				$(".labname").text($(this).text());
+				var text = getRandomName(5);
 				$(".text").text(text);
 			});
 		</script>
