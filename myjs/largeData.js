@@ -67,6 +67,7 @@ function setType(type) {
 
 
 function loadData(total) {
+	var ts = (new Date()).getTime();
 	var result = {
 		"code":"00000",
 		"msg":"请求成功",
@@ -109,5 +110,7 @@ function loadData(total) {
 		result.data.push(data);
 		// window.setInterval(function() {});
 	}
+	var te = (new Date()).getTime();
+	console.log((te-ts)/1000)
 	return result;
 }

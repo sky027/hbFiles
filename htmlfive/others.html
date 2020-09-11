@@ -3,20 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<style type="text/css">
-			.div1{
-				width: 200px;
-				height: 200px;
-				background: #0000FF;
-				float: left;
-			}
-			.div2{
-				width: 200px;
-				height: 200px;
-				background: #00C851;
-				float: left;
-			}
-		</style>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="div1"></div>
@@ -58,6 +45,19 @@
 				}
 			}
 			console.log(arr3);
+			/*---------------------------------------------------------------------------*/
+			testTime(10^6);
+			
+			function testTime(n) {
+				var ts = (new Date()).getTime();
+				var list = [];
+				for (var i = 0; i < n; i++) {
+					list.push(i);
+				}
+				//$(".div1").text(list.toString());
+				var te = (new Date()).getTime();
+				console.log((te-ts)/1000);
+			}
 		</script>
 	</body>
 </html>
