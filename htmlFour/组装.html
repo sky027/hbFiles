@@ -53,30 +53,12 @@
 			$("#btn2").click(function(){
 				var str = '[{"deviceType":"003","equipmentTypeList":["E007","E008","E009","E010","E011"]},{"deviceType":"001","equipmentTypeList":["E002","E005","E006","E007","E008"]},{"deviceType":"002","equipmentTypeList":["E001","E003","E004","E005","E006"]},{"deviceType":"210","equipmentTypeList":["E004","E005","E006","E007","E008"]},{"deviceType":"090","equipmentTypeList":["E001","E005","E006","E007","E008","E011"]},{"deviceType":"060","equipmentTypeList":["E003","E004","E005","E010","E011"]},{"deviceType":"030","equipmentTypeList":["E001","E009","E010","E011"]}]';
 				var list = JSON.parse(str);
-				debugger;
 				var arr = [{a: '1',b: '2',c: '3',}];
 				var s = arr.map(v => {
 					return {d: v.a, e: v.b};
 				});
 			});
 			/*---------------------------------------------------------------------------------------*/
-			var point = [{
-          pointCode: targetDom.find('input[name="pointCode_v"]').val(),
-          pointName: targetDom.find('input[name="pointCode"]').val()
-       }];
-			var pointCodes = (targetDom.find('input[name="pointCode_v"]').val()).split(',');
-			var pointNames = (targetDom.find('input[name="pointCode"]').val()).split(',');
-			var point = [];
-			if (pointCodes.length == pointNames.length) {
-				for (var i = 0; i < pointCodes.length; i++) {
-					point.push({
-						pointCode: pointCodes[i],
-						pointName: pointNames[i]
-					});
-				}
-			}
-			console.log(point);
-			
 			
 		</script>
 	</body>
