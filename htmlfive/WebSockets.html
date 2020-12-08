@@ -3,11 +3,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			.map-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			    color: #cbcbcb;
+			}
+			.map-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			   color: #cbcbcb;
+			}
+			.map-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+				color: #cbcbcb;
+			}
+			   
+		</style>
 	</head>
 	<body>
 		<div id="sse">
         	<a href="javascript:WebSocketTest()">运行 WebSocket</a>
       	</div>
+      	</h6>
+      	<input class="map-input" placeholder="测试输入框提示文字颜色" />
       	<h6></h6>
 		<script type="text/javascript">
 			function WebSocketTest() {

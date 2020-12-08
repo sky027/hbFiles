@@ -9,8 +9,10 @@
 		</style>
 	</head>
 	<body>
-		<div id="paper"></div>
-		
+		<!--<div id="paper"></div>-->
+		<h2>
+			<input id="inp" />
+		</h2>
 		<script type="text/javascript" charset="utf-8">
 			//模拟题目list 
 			var rows = [
@@ -71,6 +73,25 @@
 					}
 				}
 			}
+		</script>
+		
+		<script type="text/javascript">
+			$("#inp").blur(function() {
+				var val = $(this).val().trim();
+				// var reg = /^([1-9][0-9]{0,2})$/;
+				// var reg = /^[1-9]\d{0,2}$/;
+				// var reg=/^[0-1]\.([1-9]{1,2}|[0-9][1-9])$|^[0-1]{0,1}(\.\d{1,2}){0,1}$|^1(\.0{1,2}){0,1}$/;
+				var reg = /^(0\.[1-9]{0,2})|1$/;
+				var reg1 = /^(0(\.\d{1,2})?|1(\.0{1,2})?)$/;
+				
+				var reg = /^(([^0][0-9]\d{0,2}|0)\.([0-9]{1,2})$)|(^[1-9])$/; // 小数或者整数
+				var reg = /^([0-9]{1,2})+(.[0-9]{1,2})?$/;
+				if (reg.test(val)) {
+					alert("111111");
+				} else {
+					alert("000");
+				}
+			});
 		</script>
 	</body>
 </html>

@@ -31,6 +31,10 @@
 				<div class="rate"></div>
 			</div>
 			<h3 class="h3tx"><span class="tiptx"></span> <span class="scnum"></span></h3>
+			
+			<h3>
+				<a href="../htmlThree/requestData.html?param=456">跳转</a>
+			</h3>
 		</p>
 		<script type="text/javascript">
 			$(".h3tx").hide();
@@ -56,6 +60,75 @@
 				$(".h3tx").hide();
 				$(".rate").width(0);
 			});
+			setList();
+			function setList() {
+				var list = [
+					{
+						children: [],
+						elementCode: "equipmentNumber",
+						elementId: "5-8",
+						elementLevel: "2",
+						elementParentCode: "deviceListField",
+						elementSort: 8,
+						elementType: "2",
+						isDelete: "0",
+						isShow: "0",
+						tenantId: "mNxbPRjmH0KvWYqj8Qx"
+					},
+					{
+						children: [],
+						elementCode: "businessStatus",
+						elementId: "5-9",
+						elementLevel: "2",
+						elementParentCode: "deviceListField",
+						elementSort: 9,
+						elementType: "2",
+						isDelete: "0",
+						isShow: "1",
+						tenantId: "mNxbPRjmH0KvWYqj8Qx",
+					},
+					{
+						children: [],
+						elementCode: "installDate",
+						elementId: "5-10",
+						elementLevel: "2",
+						elementParentCode: "deviceListField",
+						elementSort: 10,
+						elementType: "2",
+						isDelete: "0",
+						isShow: "0",
+						tenantId: "mNxbPRjmH0KvWYqj8Qx",
+					},
+					{
+						children: [],
+						elementCode: "installTime",
+						elementId: "5-11",
+						elementLevel: "2",
+						elementParentCode: "deviceListField",
+						elementSort: 11,
+						elementType: "2",
+						isDelete: "0",
+						isShow: "1",
+						tenantId: "mNxbPRjmH0KvWYqj8Qx",
+					}
+				];
+				var arr = list;
+				console.info('改变前：', arr);
+				setTimeout(function(){
+					/*list.forEach((item, index) => {
+						if (item.isShow == '0') {
+							list.splice(index, 1);
+						}
+					});*/
+					for (var i = 0; i < list.length; i++) {
+						if (list[i].isShow == '0') {
+							list.splice(i, 1);
+							i--;
+						}
+					}
+					console.log('改变后', list);
+				}, 1000);
+			}
 		</script>
 	</body>
 </html>

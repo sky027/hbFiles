@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="static/webuploader.css" />
+		<script src="static/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/webuploader.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="uploader" class="wu-example">    
+	        <!--用来存放文件信息-->    
+	        <div id="thelist" class="uploader-list"></div>    
+	        <div class="btns">    
+	            <div class="picker">选择文件</div>    
+	            <button id="ctlBtn" class="btn btn-default">开始上传</button>
+	        </div>    
+	    </div>    
+	    <div class="showCtn"></div>  
+		  <script>  
+		  $(function() {  
+		        //  登陆接口，请忽略
+		        /*$.ajax({
+		            url: '../../../../login/login',
+		            data: {
+		                un: '3e0317090ed27c1b3f5ea41709571c3dadafcce5c1f8c0ab594bee24bfe5a5e63255f9a67276ec52edebeefd274c7a282726c3570d18bc70996c267e81eba5abdc91247a02ed31288e1de41f54c81e140a2c641a7eeaecbf4e7831b8293dbe46fbbc14022c5443e03321bf8f54736d5cb0f68e1b39b6e1cac1fa98db237c4645',
+		                pwd: '41394da41aa797c871398dd23ecef0d6288b418eb5643e507316fe652701e1a14e274614dd56e31fac877fb26ba217d837860973850de1e80d0433bdbe466459bf81a2bd66212858f8e4fc33ea3cf256e1ac3e560b4709543302cf4fa8d2434f85e58b9fc9dafd1241b7d17f75014a8324f0e24536a75c28784dc90de81a4348'
+		            }
+		        })*/
+		  
+		        var uploader = WebUploader.create({    
+		            // swf文件路径，是相对于html而言    
+		            swf: './static/Uploader.swf',    
+		            // 文件接收接口    
+		            server: '../../../../material/jQueryFileUpload?type=1',    
+		            // 选择文件按钮    
+		            pick: '.picker',  
+		            // runtimeOrder: 'flash',// 强制使用 flash 上传  
+		            duplicate: true,// 同一个文件可重复上传  
+		        });    
+		                        
+		        // 加入上传队列之前   
+		        uploader.on('beforeFileQueued', function(file) {    
+		            if(!file.size) {  
+		                console.log('文件大小为空');  
+		            }  
+		        });  
+		        // 加入上传队列    
+		        uploader.on('fileQueued', function(file) {    
+		            var str = '<div id="'+ file.id +'"><img src=""><p>'+ file.name +'</p><p class="state">等待上传</p><div class="progress"><span class="progress-bar">进度条</span></div></div>';    
+		  
+		            $('.showCtn').append(str);    
+		  
+		            $img = $('#'+ file.id).find('img');    
+		  
+		            // 创建预览图    
+		            uploader.makeThumb(file, function(error, src) {    
+		                if (error) {    
+		                    $img.replaceWith('<span>此文件无法预览</span>');    
+		                    return;    
+		                }    
+		  
+		                $img.attr('src', src);    
+		            }, 200, 200);    
+		        });   
+		 
+		        var index = 0;
+		        // 上传开始
+		        uploader.on('startUpload', function( file, percentage ) { 
+		            if(!index) {
+		                uploader.stop();
+		                index++;
+		                alert('再点1次即可上传')
+		            }
+		        });
+		  
+		        // 点击上传    
+		        $('#ctlBtn').on('click', function() {    
+		            uploader.option('formData', {//  后续添加一些参数(这个地方最好不要添加type参数，因为默认type是表示上传文件的类型，如果要添加，请在url后面拼接即可)
+		                a: 1,
+		                b: 2
+		            });
+		            uploader.upload();    
+		  
+		        });    
+		            
+		        // 显示进度条    
+		        uploader.on('uploadProgress', function(file, percentage) {    
+		            var $li = $('#'+ file.id),    
+		                $percent = $li.find('.progress-bar');    
+		            
+		            $li.find('.state').text('正在上传');    
+		  
+		            $percent.css('width', percentage*100 +'%');  
+		            $('body').append(percentage);  
+		        });    
+		            
+		        // 上传成功    
+		        uploader.on('uploadSuccess', function(file, response) {    
+		            $('#'+file.id).find('.state').text('上传成功');
+		            // uploader.reset();// 如果出现问题，一定要加上这一句    
+		        });    
+		            
+		        // 上传失败    
+		        uploader.on('uploadError', function(file, response) {    
+		            $('#'+file.id).find('.state').text('上传出错');    
+		        });    
+		            
+		        // 上传结束    
+		        uploader.on('uploadComplete', function(file, response) {    
+		            $('#'+file.id).find('.state').text('上传结束');  
+		        });  
+		  
+		        // 不是分片上传时，uploadAccept相当于uploadSuccess
+		        // 获取服务端返回的数据(每个分片会触发一次)
+		        uploader.on('uploadAccept', function(object, data) {    
+		            console && console.log(data);
+		        });  
+		 
+		        // 上传成功回调(所有分片上传成功后触发，哪个分片最慢，它就会在这里触发)    
+		        uploader.on('uploadSuccess', function(file, data) { 
+		            console && console.log(data)
+		        })
+		  });  
+		  </script>  
+	</body>
+</html>
