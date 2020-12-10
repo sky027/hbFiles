@@ -4,7 +4,26 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/base64-code.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/base-code.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<script type="text/javascript">
+			var str = 'javascript';
+		    //加密btoa
+		    var jiaMi = btoa(str);
+		    console.log('加密' + jiaMi); 
+		    //加密 atob
+		    var jieMi = atob(jiaMi);
+		    console.log('解密' + jieMi);
+		    
+		    console.log('一、加密' + Base64Encryption.encode(str));
+		    console.log('一、解密' + Base64Encryption.decode(Base64Encryption.encode(str)));
+		    
+		    console.log('二、加密' + Base64Encryption._utf8_encode(str));
+		    console.log('二、解密' + Base64Encryption._utf8_decode(Base64Encryption._utf8_encode(str)));
+		    
+		    var s = 0;
+		</script>
 	</body>
 </html>
