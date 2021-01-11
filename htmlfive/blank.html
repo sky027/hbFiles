@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="../myjs/testData.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../myjs/getJsonData.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<a href="http://www.hubei-crpcg.com/" target="_blank">{:C('JL_COPYRIGHT')}　 {:C('JL_BEIAN')}</a>
+		
+		<button id="getdata">获取数据</button>
+		<script type="text/javascript">
+			$("#getdata").click(function () {
+				var arr = getJsonData.data(8);
+				console.log(arr);
+				
+				var row = (Math.floor(Math.random() * 6) + 3);
+				var col = 6;
+				var data = getJsonData.dataList(row, col);
+				// console.log(data);
+			});
+			'06-4'	安装工单
+			'06-4-1':	'未完工安装工单列表'
+			'06-4-1-1': '新增安装工单'
+			'06-4-1-2': '编辑安装工单'
+			'06-4-1-3': '删除安装工单'
+			'06-4-1-4': '重新生成安装工单'
+			'06-4-1-5': '未完工安装工单详情'
+			'06-4-1-6': '安装工单指派   '
+			'06-4-1-7': '安装工单撤回   '
+			'06-4-1-8': '安装工单转派   '
+			'06-4-1-9': '安装工单退单确认 '
+			'06-4-2': '历史安装工单列表 '
+			'06-4-2-1': '查看图片     '
+			'06-4-2-2': '重新生成安装工单 '
+			'06-4-2-3': '历史安装工单详情 '
+			'06-5':	'告警确认工单'
+			'06-5-1': '未完工告警确认工单列表'
+			'06-5-1-1': '新增告警确认工单   ' ,
+			'06-5-1-2': '编辑告警确认工单   ' ,
+			'06-5-1-3': '重新生成告警确认工单' ,
+			'06-5-1-4': '删除告警确认工单   ' ,
+			'06-5-1-4': '告警确认工单指派   ' ,
+			'06-5-1-5': '告警确认工单撤回   ' ,
+			'06-5-1-6': '告警确认工单转派   ' ,
+			'06-5-1-7': '退单确认       ' ,
+			'06-5-1-8': '告警确认工单详情   ' ,
+			'06-5-2': '历史告警确认工单列表' ,
+			'06-5-2-1': '重新生成告警确认工单' ,
+			'06-5-2-2': '查看图片       ' ,
+			'06-5-2-3': '历史告警确认工单详情' ,
+			
+		</script>
+		
+	</body>
+</html>

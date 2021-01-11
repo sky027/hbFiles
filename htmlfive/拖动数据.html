@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Tdrag.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.box{
+				display: flex;
+			}
+			.left{
+				width: calc(100% - 300px);
+			}
+			.right{
+				width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left">
+				<table border="1" cellspacing="0" cellpadding="0" width="100%">
+					<thead>
+						<tr><th>ID</th><th>名称</th></tr>
+					</thead>
+					<tbody id="body"></tbody>
+				</table>
+			</div>
+			<div class="right">
+				<ul id="sul"></ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var tableList = [
+				{id: 's156ter',name: 'AAAAAAA'},
+				{id: 'e7895fe',name: 'BBBBBBB'},
+				{id: 'fd45612',name: 'CCCCCCCC'},
+				{id: 'yt2135e',name: 'DDDDDDDD'},
+				{id: 'hg45632',name: 'EEEEEEE'}
+			];
+			var typeList = [
+				{id: 'e78945er', name: '111111'},
+				{id: 'fd456123z', name: '22222'},
+				{id: 'hg7826jg', name: '33333333'},
+				{id: '45sfd268', name: '4444444'},
+				{id: 'fd78er45', name: '555555555'}
+			];
+			tableList.forEach(v => {
+				var html = '<tr><td>'+ v.id +'</td><td>'+ v.name +'</td></tr>';
+				$("#body").append(html);
+			});
+			typeList.forEach(v => {
+				var html = '<li id="'+ v.id +'">'+ v.name +'</li>';
+				$("#sul").append(html);
+				moveBox('#'+ v.id);
+			});
+			
+			function moveBox(idStr) {
+				$(".box").Tdrag({
+				    scope: idStr,
+				    cbStart: function(e){
+				    	//移动前的回调函数
+				    	$(".start").html(Number($(".start").html())+1)
+				    },
+				    cbMove:function(e){
+				    	//移动中的回调函数
+				    	$(".move").html(Number($(".move").html())+1)
+				    },
+				    cbEnd:function(e){
+				    	//移动结束时候的回调函数
+				    	$(".end").html(Number($(".end").html())+1)
+				    }
+				});
+			}
+		</script>
+	</body>
+</html>

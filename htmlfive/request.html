@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/base64-code.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/base-code.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<button class="htn1">获取</button>
 		<script type="text/javascript">
 			var str = 'javascript';
 		    //加密btoa
@@ -23,7 +24,36 @@
 		    console.log('二、加密' + Base64Encryption._utf8_encode(str));
 		    console.log('二、解密' + Base64Encryption._utf8_decode(Base64Encryption._utf8_encode(str)));
 		    
-		    var s = 0;
+		    $('.htn1').click(function() {
+		    	$.ajax({
+		    		type:"post",
+		    		url:"http://127.0.0.1:10001/student/listStudent",
+		    		async:true,
+		    		success: function(res){
+		    			debugger
+		    		},
+		    		error: function(res){
+		    			debugger
+		    		}
+		    	});
+		    });
+		    
+		    
+		    var list = [
+		    	{id: '123', a: '1'},
+		    	{id: '456', a: '1'},
+		    	{id: '851', a: '1'},
+		    	{id: '236', a: '1'}
+		    ];
+		    
+		    var a = list.map(v => v.id == '851');
+		    var b = list.find(v => v.id == '851');
+		    var c = list.filter(v => v.id == '851');
+		    var d = list.findIndex(v => v.id == '851');
+		    console.info(list, a, b, c, d);
+		    
+		    var ss = 9;
+		    
 		</script>
 	</body>
 </html>

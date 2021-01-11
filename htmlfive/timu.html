@@ -6,12 +6,16 @@
 		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			ul,li {list-style-type: none;}
+			#inp{height: 32px;line-height: 32px;width: 280px;font-size: 18px;padding: 0 5px;}
 		</style>
 	</head>
 	<body>
 		<!--<div id="paper"></div>-->
 		<h2>
 			<input id="inp" />
+		</h2>
+		<h2>
+			<button id="btns">NEW</button>
 		</h2>
 		<script type="text/javascript" charset="utf-8">
 			//模拟题目list 
@@ -86,12 +90,18 @@
 				
 				var reg = /^(([^0][0-9]\d{0,2}|0)\.([0-9]{1,2})$)|(^[1-9])$/; // 小数或者整数
 				var reg = /^([0-9]{1,2})+(.[0-9]{1,2})?$/;
+				var reg = /^(0(\.\d{1,2})?|1(\.0{1,2})?)$/;
 				if (reg.test(val)) {
-					alert("111111");
+					alert("YES");
 				} else {
-					alert("000");
+					alert("NO");
 				}
+			});
+			$("#btns").click(function(){
+				var url = 'http://10.5.24.236:4200/filink-trouble-server/trouble/troubleMessageConfirm/0A3OVZrRyMV7JT8M1xB/1/SD1608295623694';
+				var url2 = './menu.html';
+				window.open(url, 'AAAAA', 'height=400, width=800, top=30%,left=30%, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
 			});
 		</script>
 	</body>
-</html>
+</html> 

@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	    <!-- ------------------------------- -->
+	    
+		<script type="text/javascript">
+			var list = result.data;
+			list.forEach((item) => {
+		      item.configurationsList.forEach(k => {
+		        k.configurationList.forEach(config => {
+		          config.formColumn = FormOperate.createColumnTemp(config.configParamList, null);
+		        });
+		      });
+		    });
+			var result = {
+				"code": "00000",
+				"msg": "请求成功",
+				"data": [
+					{
+						"tabId": "gatewayConfig",
+						"name": "网关基础信息配置",
+						"type": null,
+						"onShow": "1",
+						"configurationsList": [
+							{
+								"configurationList": [
+									{
+										"id": "interval",
+										"name": "心跳周期",
+										"commandId": "GW_SET_HEART_PERIOD",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "period",
+												"name": "心跳周期设置",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "S",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "serverParameters",
+										"name": "网关配置升级服务器参数",
+										"commandId": "GW_CONFIGURATION_UPDATE_SERVER_PARAMETERS",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "ip",
+												"name": "IP地址",
+												"code": null,
+												"display": true,
+												"type": "input",
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "port",
+												"name": "端口号",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "username",
+												"name": "鉴权账号",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[A-Za-z]+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "password",
+												"name": "鉴权密码",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "[^%',;=?$\\x22]+"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "path",
+												"name": "路径地址",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "coordinate",
+										"name": "网关经纬度",
+										"commandId": "GW_SET_COORDINATE",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "latitude",
+												"name": "纬度",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((^[0-9])|(^[1-8]([0-9])?))(([.](([0-9])|([0-5][0-9])))?){1,2}$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "longitude",
+												"name": "经度",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "((^[0-9])|(^[2-9]([0-9])?)|(^[1](([0-7])?)(([0-9])?)))(([.](([0-9])|([1-5][0-9])))?){1,2}$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "holiday",
+										"name": "节假日配置",
+										"commandId": "GW_SET_HOLIDAY",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "year",
+												"name": "年份",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "年",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^\\d{4}$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month1",
+												"name": "1月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month2",
+												"name": "2月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9]))([,](((0?[1-9])|((1|2)[0-9]))))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month3",
+												"name": "3月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month4",
+												"name": "4月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30)([,](((0?[1-9])|((1|2)[0-9])|30)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month5",
+												"name": "5月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month6",
+												"name": "6月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30)([,](((0?[1-9])|((1|2)[0-9])|30)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month7",
+												"name": "7月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month8",
+												"name": "8月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month9",
+												"name": "9月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30)([,](((0?[1-9])|((1|2)[0-9])|30)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month10",
+												"name": "10月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month11",
+												"name": "11月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30)([,](((0?[1-9])|((1|2)[0-9])|30)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "month12",
+												"name": "12月",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "日",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^((0?[1-9])|((1|2)[0-9])|30|31)([,](((0?[1-9])|((1|2)[0-9])|30|31)))+$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "upgrade",
+										"name": "网关升级",
+										"commandId": "GW_UPGRADE",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "pack_name",
+												"name": "升级文件名",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									}
+								],
+								"id": "E001",
+								"name": "网关基础信息配置",
+								"commandId": null,
+								"url": null
+							}
+						]
+					},
+					{
+						"tabId": "childConfiguration",
+						"name": "网关子设备配置",
+						"type": "component",
+						"onShow": "1",
+						"configurationsList": [
+							{
+								"configurationList": [
+									{
+										"id": "interval",
+										"name": "心跳周期",
+										"commandId": "GW_SET_HEART_PERIOD",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "period",
+												"name": "心跳周期设置",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "S",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "basic",
+										"name": "气象仪设备基础配置信息",
+										"commandId": "GW_SET_DEVICE_INFO",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "comm_addr",
+												"name": "通信地址",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "baudrate",
+												"name": "设备波特率",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "databit",
+												"name": "设备数据位",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "stopbit",
+												"name": "设备停止位",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "parity",
+												"name": "设备效验位",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "enable",
+												"name": "是否使能",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^([01])\\1*$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "flowctl",
+												"name": "流控",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "threshold",
+										"name": "告警阈值设置",
+										"commandId": "GW_SET_THRESHOLD",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "PM10_var_up",
+												"name": "PM10上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "PM10_var_low",
+												"name": "PM10下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "PM10_var_trigger_en",
+												"name": "是否开启PM10告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "PM25_var_up",
+												"name": "PM25上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "PM25_var_low",
+												"name": "PM25下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "PM25_trigger_en",
+												"name": "是否开启PM25告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "temperature_var_up",
+												"name": "温度上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "temperature_var_low",
+												"name": "温度下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "temperature_trigger_en",
+												"name": "是否开启温度告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_var_up",
+												"name": "湿度上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_var_low",
+												"name": "湿度下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_trigger_en",
+												"name": "是否开启湿度告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "pressure_var_up",
+												"name": "大气压上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "pressure_var_low",
+												"name": "大气压下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "pressure_trigger_en",
+												"name": "是否开启大气压告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "wind_var_up",
+												"name": "风速上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "wind_var_low",
+												"name": "风速下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "wind_trigger_en",
+												"name": "是否开启风速告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "noise_var_up",
+												"name": "噪音上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "noise_var_low",
+												"name": "噪音下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "noise_trigger_en",
+												"name": "是否开启噪音告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": "输入0/1",
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											}
+										]
+									}
+								],
+								"id": "E013",
+								"name": "微气象仪设备类型",
+								"commandId": null,
+								"url": null
+							},
+							{
+								"configurationList": [
+									{
+										"id": "basic",
+										"name": "摄像头设备基础配置信息",
+										"commandId": "GW_SET_DEVICE_INFO",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "port",
+												"name": "端口号",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "username",
+												"name": "鉴权账号",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[A-Za-z]+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "password",
+												"name": "鉴权密码",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "[^%',;=?$\\x22]+"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "protocol",
+												"name": "通信协议类型",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "role",
+												"name": "网关通信角色",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[A-Za-z]+$"
+													},
+													{
+														"required": true
+													}
+												]
+											},
+											{
+												"id": "path",
+												"name": "连接地址",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									}
+								],
+								"id": "E005",
+								"name": "摄像头设备类型",
+								"commandId": null,
+								"url": null
+							}
+						]
+					},
+					{
+						"tabId": "sensorConfig",
+						"name": "传感器配置",
+						"type": "component",
+						"onShow": "1",
+						"configurationsList": [
+							{
+								"configurationList": [
+									{
+										"id": "interval",
+										"name": "心跳周期",
+										"commandId": "GW_SET_HEART_PERIOD",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "period",
+												"name": "心跳周期设置",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "S",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "threshold",
+										"name": "告警阈值设置",
+										"commandId": "GW_SET_THRESHOLD",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "temperature_var_up",
+												"name": "温度上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "temperature_var_low",
+												"name": "温度下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "temperature_var_trigger_en",
+												"name": "是否开启温度告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_var_up",
+												"name": "湿度上限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_var_low",
+												"name": "湿度下限",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											},
+											{
+												"id": "humidity_var_trigger_en",
+												"name": "是否开启湿度告警",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											}
+										]
+									}
+								],
+								"id": "S001",
+								"name": "温湿度传感器设备类型",
+								"commandId": null,
+								"url": null
+							},
+							{
+								"configurationList": [
+									{
+										"id": "interval",
+										"name": "心跳周期",
+										"commandId": "GW_SET_HEART_INTERVAL",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "period",
+												"name": "心跳周期设置",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": "S",
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": [
+													{
+														"pattern": "^[1-9]\\d*|0$"
+													},
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "switch",
+										"name": "设置DO接口设备开关量",
+										"commandId": "GW_SET_DO",
+										"url": "/filink-fipole-business-server/instruct/instructDistribute",
+										"configParamList": [
+											{
+												"id": "switch",
+												"name": "开/关",
+												"code": null,
+												"type": "select",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "1",
+												"selectParams": [
+													{
+														"id": "1",
+														"name": "开"
+													},
+													{
+														"id": "0",
+														"name": "关"
+													}
+												],
+												"rules": [
+													{
+														"required": true
+													}
+												]
+											}
+										]
+									}
+								],
+								"id": "S003",
+								"name": "DO设备类型",
+								"commandId": null,
+								"url": null
+							}
+						]
+					},
+					{
+						"tabId": "strategy",
+						"name": "策略规则配置",
+						"type": null,
+						"onShow": "3",
+						"configurationsList": [
+							{
+								"configurationList": [
+									{
+										"id": "type",
+										"name": null,
+										"commandId": null,
+										"url": null,
+										"configParamList": [
+											{
+												"id": "type",
+												"name": "触发类型",
+												"code": null,
+												"type": "select",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "1",
+												"selectParams": [
+													{
+														"id": "noise",
+														"name": "noise"
+													},
+													{
+														"id": "pm10",
+														"name": "pm10"
+													},
+													{
+														"id": "pm25",
+														"name": "pm25"
+													},
+													{
+														"id": "temperature",
+														"name": "temperature"
+													},
+													{
+														"id": "holiday",
+														"name": "holiday"
+													},
+													{
+														"id": "pressure",
+														"name": "pressure"
+													},
+													{
+														"id": "windspeed",
+														"name": "windspeed"
+													}
+												],
+												"rules": null
+											}
+										]
+									},
+									{
+										"id": "value",
+										"name": "门限值",
+										"commandId": null,
+										"url": null,
+										"configParamList": [
+											{
+												"id": "value",
+												"name": "门限值",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "",
+												"selectParams": null,
+												"rules": null
+											}
+										]
+									},
+									{
+										"id": "relationship",
+										"name": "比较",
+										"commandId": null,
+										"url": null,
+										"configParamList": [
+											{
+												"id": "relationship",
+												"name": "比较",
+												"code": null,
+												"type": "select",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "1",
+												"selectParams": [
+													{
+														"id": "1",
+														"name": "lt"
+													},
+													{
+														"id": "2",
+														"name": "lte"
+													},
+													{
+														"id": "3",
+														"name": "eq"
+													},
+													{
+														"id": "4",
+														"name": "gte"
+													},
+													{
+														"id": "5",
+														"name": "gt"
+													}
+												],
+												"rules": null
+											}
+										]
+									},
+									{
+										"id": "times",
+										"name": "触发次数",
+										"commandId": null,
+										"url": null,
+										"configParamList": [
+											{
+												"id": "times",
+												"name": "触发次数",
+												"code": null,
+												"type": "input",
+												"display": true,
+												"unit": null,
+												"placeholder": null,
+												"defaultValue": "1",
+												"selectParams": null,
+												"rules": null
+											}
+										]
+									}
+								],
+								"id": "E006",
+								"name": null,
+								"commandId": null,
+								"url": null
+							}
+						]
+					}
+				]
+			};
+		</script>
+	</body>
+</html>

@@ -1,7 +1,7 @@
 function setID(){
 	var numArr = ['A','0','B','1','C','2','D','3','E','4','F','5','G','6','H','7','I','8','J','9',
 	'K','0','L','1','M','2','N','3','O','4','P','5','Q','6','R','7','S','8','T','9','U','1','V','2','W','3','X','4','Y','5','Z'];
-	var longs = ''
+	var longs = '';
 	for(var j=0;j<3;j++){
 		var sorts = '';
 		for(var i=0;i<4;i++){
@@ -11,6 +11,19 @@ function setID(){
 		longs += sorts;
 	}
 	return longs;
+}
+function getUUID() {
+	var s = [];
+	var hexDigits = "0123456789ABCDEF";
+	for (var i = 0; i < 36; i++) {
+		s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+	}
+	s[14] = "4";
+	s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);
+	s[8] = s[13] = s[18] = s[23];
+
+	var uuid = s.join("");
+	return uuid;
 }
 function getName(){
 	var allStr = "赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜戚谢邹喻柏水窦章云苏潘葛奚范彭郎冉宰郦雍"
@@ -61,27 +74,35 @@ function getPhoneNum(){
 		var n = Math.floor(Math.random() * 10);
 		phone += n;
 	}
-	
 	return phone;
 }
-/*function getArrData(){
-	var jsonArr = [];
-	for(var i=0;i<50;i++){
-		var data = {
-			"id": setID(),
-			"name": getName(),
-			"sex": (Math.floor(Math.random() * 2) + 1),
-			"age": (Math.floor(Math.random() * 21) + 20),
-			"nations": getNations(),
-			"previce": getPrevice(),
-			"phone": getPhoneNum()
-		};
-		jsonArr.push(data);
+function getDateTime(type) {
+	var time = '';
+	// yyyy-mm-dd HH:mm:ss
+	// yyyy-mm-dd
+	// HH:mm:ss
+	var yy = (Math.floor(Math.random() * 40) + 1980);
+	var mm = Math.floor(Math.random() * 11) + 1;
+	var dd = Math.floor(Math.random() * 29) + 1;
+	var h = Math.floor(Math.random() * 24);
+	var m = Math.floor(Math.random() * 59);
+	var s = Math.floor(Math.random() * 59);
+	
+	if (type == 'HH:mm:ss') {
+		time = (h < 10 ? '0'+h : h) + ':'+ (m<10?'0'+m : m) +':'+ (s<10?'0'+s : s);	
+	} else if (type == 'yyyy-mm-dd') {
+		time = yy + '-'+ (mm<10?'0'+mm : mm) +'-'+ (dd<10?'0'+dd : dd);
+	} else {
+		time = yy + '-'+ (mm<10?'0'+mm : mm) +'-'+ (dd<10?'0'+dd : dd) +' '+ (h < 10 ? '0'+h : h) + ':'+ (m<10?'0'+m : m) +':'+ (s<10?'0'+s : s);
 	}
-	console.log(jsonArr);
-	return jsonArr;
-}*/
+	return time;
+}
+
 var getJsonData = {
+	/**
+	 * 生成一维数组
+	 * @param {Number} n 总条数
+	 */
 	data: function(n){
 		var jsonArr = [];
 		for(var i=0;i<n;i++){
@@ -92,12 +113,40 @@ var getJsonData = {
 				"age": (Math.floor(Math.random() * 21) + 20),
 				"nations": getNations(),
 				"previce": getPrevice(),
-				"phone": getPhoneNum()
+				"phone": getPhoneNum(),
+				"date": getDateTime(),
+				"day": getDateTime('yyyy-mm-dd'),
+				"time": getDateTime('HH:mm:ss'),
 			};
 			jsonArr.push(data);
 		}
 		return jsonArr;
 		
+	},
+	/**
+	 * 生成二位数组
+	 * @param {Number} 总条数
+	 * @param {Number} 每个元素的个数
+	 */
+	dataList: function(row, col) {
+		var list = [];
+		for(var i=0;i<row;i++){
+			var item = [];
+			for (var j = 0; j < col; j++) {
+				var data = {
+					"id": getUUID(),
+					"name": getName(),
+					"sex": (Math.floor(Math.random() * 2) + 1),
+					"age": (Math.floor(Math.random() * 21) + 20),
+					"nations": getNations(),
+					"previce": getPrevice(),
+					"phone": getPhoneNum()
+				};
+				item.push(data);
+			}
+			list.push(item);
+		}
+		return list;
 	}
 }
 

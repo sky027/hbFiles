@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery仪表盘进度条</title>
+</head>
+<body>
+
+<canvas style="display:inline-block;width: 150px" id="canvas1"></canvas>
+<canvas style="display:inline-block;width: 150px" id="canvas2"></canvas>
+<canvas style="display:inline-block;width: 150px" id="canvas3"></canvas>
+<input type="button" value="刷新" onClick="refresh()"/>
+
+<script src="./js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+(function($){
+	const flush = function(score,option) {
+		let preScore = this.data("preScore")?this.data("preScore"):0;
+		let radius = option.radius; //圆的半径
+		let angle = option.angle;
+
+	    let canvas = this[0];
+	    let ctx = canvas.getContext('2d');
+	    let width = radius*2+option.progresslineWidth*2;
+	    let addHeight = Math.sin(angle*2*Math.PI/360)*(radius+option.progresslineWidth);
+	    let height = radius+addHeight+option.progresslineWidth;
+	    this.attr("width",width);
+		this.attr("height",height);
+	    let addPI = angle*Math.PI/180;
+	    ctx.translate(width/2,height-addHeight);
+        function draw(flag){
+        	ctx.save();
+	        ctx.clearRect(-width/2, -height, width, height+addHeight);
+	        ctx.beginPath();
+	        ctx.strokeStyle = option.progresslineColor;
+	        ctx.lineWidth=option.progresslineWidth;
+	        ctx.arc(0,0,radius,Math.PI-addPI,2*Math.PI+addPI);
+	        ctx.stroke();
+
+			//步长弧度
+	        let stepRadian = (Math.PI+addPI*2)/option.max;
+	        ctx.beginPath();
+	        ctx.strokeStyle = option.progressColor(preScore);
+	        let tempScore = preScore>option.max?option.max:preScore;
+	        ctx.arc(0,0,radius,Math.PI-addPI,stepRadian*tempScore-addPI+Math.PI);
+	        ctx.stroke();
+
+        	ctx.beginPath();
+        	ctx.font="70px Microsoft yahei";    
+	        ctx.textAlign="center"; 
+	        ctx.fillText(option.text,0,-10+addHeight*0.5)
+	        ctx.stroke();
+	        ctx.beginPath();
+	        ctx.font="70px Microsoft yahei";
+	        ctx.textAlign="center"; 
+	        ctx.fillText(preScore+option.scoreSuffix,0,-height/2+addHeight*0.8);
+	        ctx.stroke();
+
+			ctx.beginPath();
+	        option.draw(ctx,preScore);
+	        ctx.stroke();
+	      
+        	if(flag&&preScore<score){
+	        	preScore+=option.step;
+	        	preScore = preScore>score?score:preScore
+	        	setTimeout(function(){
+        			draw(true)
+        		},20);
+	        }
+	        if(!flag&&preScore>score){
+	        	preScore-=option.step;
+	        	preScore = preScore<score?score:preScore
+	        	setTimeout(function(){
+        			draw(false)
+        		},20);
+	        }
+        }
+		draw(preScore<=score);
+	}
+
+	let defaultOption = {
+		"max":100,
+		"step":1,
+		"angle":0,
+		"radius":200,
+		"progresslineWidth":15,
+		"progresslineColor":"#e3e8ee",
+		"scoreSuffix":"",
+		"text":"高风险",
+		"progressColor":function(score){return "#2b85e4"},
+		"draw":function(ctx,score){
+
+		}
+	}
+
+	$.fn.extend({
+	  dashboard: function(score,option) {
+	  	let preScore = this.data("preScore");
+	  	flush.call(this,score,$.extend({},defaultOption, option))
+	  	this.data("preScore",score);
+	    return this;
+	  }
+	});
+}($))	
+
+refresh();
+function refresh(){
+	$("#canvas1").dashboard(parseInt(Math.random()*100),{progressColor:()=>"red"});
+	$("#canvas2").dashboard(parseInt(Math.random()*1200),{
+		"text":"风险",
+		"max":1000,
+		"step": 10,
+		"angle":25,
+		"progressColor":(score)=>{
+			return score>500?"red":"#2b85e4"
+		}
+	});
+	$("#canvas3").dashboard(parseInt(Math.random()*100),{
+		"text":"速度",
+		"scoreSuffix":"km/h",
+		"angle":90
+	});
+}
+</script>
+</body>
+</html>

@@ -12,6 +12,19 @@ function setID(){
 	}
 	return longs;
 }
+function getUUID() {
+	var s = [];
+	var hexDigits = "0123456789ABCDEF";
+	for (var i = 0; i < 36; i++) {
+		s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+	}
+	s[14] = "4";
+	s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);
+	s[8] = s[13] = s[18] = s[23];
+
+	var uuid = s.join("");
+	return uuid;
+}
 function getName(){
 	var allStr = "赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜戚谢邹喻柏水窦章云苏潘葛奚范彭郎冉宰郦雍"
 			   + "鲁韦昌马苗凤花方俞任袁柳酆鲍史唐费廉岑薛雷贺倪汤滕殷罗毕郝邬安常乐于时傅皮卞齐康伍余元卜顾孟平黄广禄阙东"
@@ -67,7 +80,7 @@ export default function getArrData(){
 	var jsonArr = [];
 	for(var i=0;i<50;i++){
 		var data = {
-			"id": setID(),
+			"id": getUUID(),
 			"name": getName(),
 			"sex": (Math.floor(Math.random() * 2) + 1),
 			"age": (Math.floor(Math.random() * 21) + 20),

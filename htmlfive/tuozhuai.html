@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片拖拽</title>
+  <style>
+    #box {
+          width: 100px; height: 100px;
+          background-color: rgb(44, 109, 6);
+          position: absolute; cursor: move;
+    } 
+    #father {
+        width: 300px; height: 350px;
+        background-color: rgb(97, 74, 85);
+        position: relative;
+    }
+    .box2{
+    	width: 200px;
+    	height: 200px;
+    	position: absolute;
+    	top: 300px;
+    	left: 600px;
+    	background: #409EFF;
+    }
+  </style>
+
+</head>
+<body>
+    <div id="father">       <!--参考背景图-->
+    	<div class="box2"></div>
+      <div id="box"></div>   <!--拖拽对象 -->
+    </div>
+    <script type="text/javascript">
+        var box = document.getElementById("box");
+        // 图片移动效果
+        box.onmousedown=function(event) {  //鼠标点下去时的坐标
+            var disX = event.clientX - box.offsetLeft;
+            var disY = event.clientY - box.offsetTop;
+            //console.log(disX,disY) 输出参数做一下测试
+            window.onmousemove=function (event) { //鼠标移动时的坐标
+                var x = event.clientX -disX;
+                var y = event.clientY -disY;
+
+      
+                // 图形移动的边界判断
+                x = x <= 0 ? 0 : x;  //左移
+                x = x >= window.offsetWidth-box.offsetWidth ? window.offsetWidth-box.offsetWidth : x;  //右移
+                y = y <= 0 ? 0 : y; //上移
+                y = y >= window.offsetHeight-box.offsetHeight ? window.offsetHeight-box.offsetHeight : y; //下移
+                box.style.left = x + 'px';
+                box.style.top = y + 'px';
+            }
+            // 鼠标弹起后图片位置确定，停止移动
+            window.onmouseup=function(event) {
+                window.onmousemove=null;
+                window.onmouseup=null;
+            } 
+        }                
+    </script>
+</body>
+</html>
