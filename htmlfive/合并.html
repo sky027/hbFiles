@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="chart" style="height: 300px;"></div>
+		<div id="chart2" style="height: 200px;width: 700px;"></div>
+		<script type="text/javascript">
+			var arr = [1,2,3,4,5,6,7,8,9];
+			var poolArr = [
+				{colIndex: 3, colNum: 3,isCol: true}
+			];
+			var newArr = arr.map( (v, i) => {
+				return {colIndex: i +1, colNum: 0,isCol: false};
+			});
+			console.log(newArr);
+			for (var i = 0; i < poolArr.length; i++) {
+				var col = poolArr[i].colNum;
+				var sum = 0;
+				var index = -1;
+				for (var j = 0; j < newArr.length; j++) {
+					if (poolArr[i].colIndex == newArr[j].colIndex) {
+						newArr[j].colNum = poolArr[i].colNum;
+						newArr[j].isCol = true;
+						sum++;
+						index = j;
+					} else {
+						if (index > -1) {
+							if (poolArr[i].colIndex == newArr[index].colIndex && sum < col) {
+								newArr[j].isCol = true;
+								sum++;
+							} else {
+								break;
+							}
+						}
+					}
+				}
+			}
+			console.log(newArr);
+		</script>
+		<script type="text/javascript">
+			var chartData = [];
+		    var legend = [];
+		    var colors = ['#f5a04e', '#00adcf', '#9186e0', '#efc136', '#f65f31', '#34eec2', '#d84c29'];
+		    var total = 0;
+			var levelList = [
+		        {'count': 19, 'label': '通信告警', score: 0},
+		        {'count': 31, 'label': '业务质量告警', score: 0},
+		        {'count': 9, 'label': '环境告警', score: 0},
+		        {'count': 20, 'label': '电力告警', score: 0},
+		        {'count': 37, 'label': '安全告警', score: 0},
+		        {'count': 29, 'label': '设备告警', score: 0}
+		    ];
+		    levelList.forEach(item => {
+		      total += item.count;
+		      legend.push(item.label);
+		      chartData.push({
+		        value: item.count,
+		        name: item.label
+		      });
+		    });
+		    var score = 0;
+		    chartData.forEach((v, i) => {
+		      v.score = 0;
+		      if (total > 0) {
+		        if (i === chartData.length - 1 && v.value > 0) {
+		          v.score = ((1 - score) * 100).toFixed(2);
+		        } else {
+		        	if (v.value > 0) {
+		        		var num = (v.value / total).toFixed(4);
+			            score += Number(num);
+			            v.score = (num * 100).toFixed(2);
+		        	}
+		        }
+		      }
+		    });
+		    console.log(chartData);
+			var chart = echarts.init(document.getElementById('chart'));
+			var option = {
+		      color: colors,
+		      title: {text: '', left: 'center'},
+		      tooltip: {
+		        trigger: 'item',
+		        formatter: '{a} <br/>{b} : {c} ({d}%)'
+		      },
+		      legend: {
+		        type: 'scroll',
+		        orient: 'horizontal',
+		        left: 'left',
+		        data: legend
+		      },
+		      series: [
+		        {
+		          name: '类型统计',
+		          type: 'pie',
+		          radius: '70%',
+		          center: ['50%', '55%'],
+		          data: chartData,
+		          emphasis: {
+		            itemStyle: {
+		              shadowBlur: 10,
+		              shadowOffsetX: 0,
+		              shadowColor: 'rgba(0, 0, 0, 0.5)'
+		            }
+		          },
+		          label: {
+		            normal: {
+		              formatter(v) {
+		              	var str = v.name +' '+ v.value + '('+ v.percent +'%)';
+		                return str;
+		              }
+		            }
+		          },
+		          labelLine: {
+		            length: 5,
+		            length2: 10,
+		          }
+		        }
+		      ]
+		    };
+		    chart.setOption(option, true);
+		</script>
+		<script type="text/javascript">
+			var chart2 = echarts.init(document.getElementById('chart2'));
+			var colorList = ['#3279f0', '#eff0f4'];
+			var option = {
+			    tooltip: {show: false},
+			    legend: {show: false},
+			    color: colorList,
+			    series: [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			            radius: ['87%', '98%'],
+			            avoidLabelOverlap: false,
+			            hoverAnimation: false,
+			            cursor: 'default',
+			            label: {
+			                normal: {
+	                            show: true,
+	                            position: 'center',
+	                            fontSize: 14,
+	                            lineHeight: 16,
+	                            formatter: '{b}\n{d}.00%', // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+	                            fontStyle: 'normal'
+	                        }
+			            },
+			            emphasis: {
+			                label: {
+			                    show: false
+			                }
+			            },
+			            labelLine: {
+			                show: false
+			            },
+			            data: [
+			                {
+			                	value: 60,
+			                	name: '已完成',
+			                	label: {
+                                	normal: {
+	                                    show: true,
+	                                }
+	                            },
+	                            itemStyle:{
+			                        normal:{color: colorList[0]},
+			                        emphasis:{color: colorList[0]}
+			                    }
+			                },
+			                {
+			                	value: 40,
+			                	name: '未完成',
+			                	label: {
+                                	normal: {
+	                                    show: false,
+	                                }
+	                            },
+	                            itemStyle:{
+			                        normal:{color: colorList[1]},
+			                        emphasis:{color: colorList[1]}
+			                    }
+			                }
+			            ]
+			        }
+			    ]
+			};
+			chart2.setOption(option, true);
+		</script>
+	</body>
+</html>
